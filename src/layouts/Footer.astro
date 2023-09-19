@@ -1,0 +1,72 @@
+---
+import "../styles/global.css";
+---
+
+<footer>
+    <div class="footerContainer">
+        <div class="footerDiv1">
+            <p>Hi-Fi Corner</p>
+            <p>Edinburgh 2 Joppa Road EH15 2EU</p>
+            <p>Falkirk 44 Cow Wynd FK1 1PU</p>
+        </div>
+
+        <div class="footerDiv2">
+            <a>Returns & Refunds ┃ Privacy Policy</a>
+        </div>
+
+        <div class="footerDiv3">
+            <p><i class="fa-solid fa-globe"></i>Worldpay</p>
+            <p><i class="fa-brands fa-cc-visa"></i></p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer {
+        background-color: rgb(205, 176, 103);
+        width: 100%;
+        border-radius: 0px 0px 15px 15px;
+    }
+
+    .footerContainer p,
+    a {
+        margin: 0;
+        font-family: "Museo sans rounded webfont";
+        font-weight: 700px;
+        font-size: 12px;
+    }
+
+    .footerContainer {
+        padding: 1em 2em;
+        display: grid;
+        grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
+    }
+
+    .footerDiv1 {
+        display: grid;
+        width: 300px;
+        height: 50px;
+    }
+
+    .footerDiv2 {
+        height: 50px;
+        width: 200px;
+    }
+
+    .footerDiv2 a {
+        color: white;
+    }
+
+    .footerDiv3 {
+        grid-column: 4/5;
+    }
+
+    .footerDiv3 p {
+        font-size: 10px;
+        color: white;
+
+    }
+</style>

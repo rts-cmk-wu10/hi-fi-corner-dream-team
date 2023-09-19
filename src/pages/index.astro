@@ -20,8 +20,8 @@ import "../styles/global.css";
 					<p>hi</p>
 					<p>fi</p>
 				</div>
+				<p class="box__address">hificorner.co.uk</p>
 			</div>
-			<p class="box__address">hificorner.co.uk</p>
 		</div>
 
 		<div class="middle">
@@ -49,14 +49,22 @@ import "../styles/global.css";
 
 	.box {
 		display: grid;
-
-		grid-template-rows: 1fr;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 1fr 2fr 1fr;
 	}
 	.backgroundIMG,
-	.box__hifi {
-		grid-column: 1 / 2;
-		grid-row: 1 / 2;
+	.box__box {
+		grid-column: 1 / -1;
+		grid-row: 1 / -1;
 	}
+
+	.box__box {
+		grid-row: 2 / 2;
+		height: 200px;
+		justify-self: center;
+		align-self: center;
+	}
+	
 	.box > p {
 		text-align: center;
 		text-transform: uppercase;

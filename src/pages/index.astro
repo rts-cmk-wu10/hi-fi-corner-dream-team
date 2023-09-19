@@ -1,44 +1,101 @@
 ---
 import StartLayout from "../layouts/StartLayout.astro";
+import { Image } from "astro:assets";
+import backgroundsIMGone from "../assets/backgrounds/frontPage.jpg.jpg";
+import backgroundsIMGtwo from "../assets/backgrounds/frontPageMiddle.jpg.jpg";
+import "../styles/global.css";
 ---
 
 <StartLayout title="Hejhej">
-	<header></header>
-	<h1>Test</h1>
-	<div class="box">
-		<div class="box__hifi">
-			<p>hi</p>
-			<p>fi</p>
+	<main>
+		<div class="box">
+			<Image
+				format="webp"
+				src={backgroundsIMGone}
+				alt="speaker background"
+				class="backgroundIMG imgWidth"
+			/>
+			<div class="box__box">
+				<div class="box__hifi">
+					<p>hi</p>
+					<p>fi</p>
+				</div>
+			</div>
+			<p class="box__address">hificorner.co.uk</p>
 		</div>
-		<p>hificorner.co.uk</p>
-	</div>
-	<div class="middle">
-		<div class="middle__box">
-			<p>our edinburgh showroom has now moved</p>
-			<p>to stunning new premises on joppa road</p>
+
+		<div class="middle">
+			<Image
+				src={backgroundsIMGtwo}
+				alt="background middle"
+				class="backgroundIMGtwo imgWidth"
+			/>
+			<div class="middle__box">
+				<p>our edinburgh showroom has now moved</p>
+				<p>to stunning new premises on joppa road</p>
+			</div>
 		</div>
-	</div>
+	</main>
 </StartLayout>
 
 <style>
+	.imgWidth {
+		width: 100%;
+	}
 
-	.box > p{
+	.backgroundIMG {
+		height: auto;
+	}
+
+	.box {
+		display: grid;
+
+		grid-template-rows: 1fr;
+	}
+	.backgroundIMG,
+	.box__hifi {
+		grid-column: 1 / 2;
+		grid-row: 1 / 2;
+	}
+	.box > p {
 		text-align: center;
 		text-transform: uppercase;
-		font-size: 0.62em;
+		font-size: 1em;
 		font-weight: 700;
 	}
 
 	.box__hifi {
-		border: 2px solid black;
-		width: 100px;
-		height: 100px;
-		padding-top: 3.5em;
-		padding-left: 0.2em;
+		border: 2px solid rgb(0, 0, 0);
+		padding: 3em 1em 0 0.2em;
+		width: 150px;
+		height: 100%;
 	}
 
 	.box__hifi > p {
 		text-transform: uppercase;
+		color: rgb(0, 0, 0);
+		font-size: 2em;
+	}
+
+	.box__address {
+		color: rgb(0, 0, 0);
+	}
+
+	.middle {
+		max-width: 100%;
+		margin-top: 20em;
+	}
+
+	.backgroundIMGtwo {
+	}
+
+	.middle__box {
+		padding-top: 4em;
+	}
+
+	.middle__box > p {
+		color: rgb(0, 0, 0);
+		text-align: center;
+		font-size: 3em;
 	}
 </style>
->>>>>>>>> Temporary merge branch 2

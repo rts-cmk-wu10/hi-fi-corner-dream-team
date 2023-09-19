@@ -4,6 +4,7 @@ import { Image } from "astro:assets";
 import backgroundsIMGone from "../assets/backgrounds/frontPage.jpg.jpg";
 import backgroundsIMGtwo from "../assets/backgrounds/frontPageMiddle.jpg.jpg";
 import "../styles/global.css";
+import Gallery from "../components/Gallery.astro"
 ---
 
 <StartLayout title="Hejhej">
@@ -35,10 +36,16 @@ import "../styles/global.css";
 				<p>to stunning new premises on joppa road</p>
 			</div>
 		</div>
+		<Gallery></Gallery>
 	</main>
 </StartLayout>
 
 <style>
+
+main{
+	font-family:"Museo sans rounded webfont", sans-serif; 
+}
+
 	.imgWidth {
 		width: 100%;
 	}
@@ -65,45 +72,56 @@ import "../styles/global.css";
 		align-self: center;
 	}
 	
-	.box > p {
+	.box__box > p {
 		text-align: center;
 		text-transform: uppercase;
-		font-size: 1em;
+		font-size: 1.1em;
 		font-weight: 700;
 	}
 
 	.box__hifi {
-		border: 2px solid rgb(0, 0, 0);
-		padding: 3em 1em 0 0.2em;
-		width: 150px;
-		height: 100%;
+		border: 2px solid rgb(255, 255, 255);
+		padding: 6em 1em 0 0.4em;
+		font-weight: 700;
+		width: 180px;
+		height: 180px;
 	}
 
 	.box__hifi > p {
 		text-transform: uppercase;
-		color: rgb(0, 0, 0);
+		color: rgb(255, 255, 255);
 		font-size: 2em;
 	}
 
 	.box__address {
-		color: rgb(0, 0, 0);
+		color: rgb(255, 255, 255);
 	}
 
 	.middle {
-		max-width: 100%;
-		margin-top: 20em;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
 	}
 
 	.backgroundIMGtwo {
 	}
 
 	.middle__box {
-		padding-top: 4em;
+		align-self: center;
+	}
+
+	.backgroundIMGtwo, .middle__box{
+		grid-column: 1 / -1;
+		grid-row: 1 / -1;
+	}
+
+	.backgroundIMGtwo{
+		height: 400px;
 	}
 
 	.middle__box > p {
-		color: rgb(0, 0, 0);
+		color: rgb(255, 255, 255);
 		text-align: center;
-		font-size: 3em;
+		font-size: 3.5em;
+		text-transform: uppercase;
 	}
 </style>

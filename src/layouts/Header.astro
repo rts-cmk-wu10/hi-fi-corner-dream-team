@@ -1,5 +1,6 @@
-
-
+---
+import "../styles/global.css" 
+---
 <header>
     <div class="upperNav">
         <li><a href=""><i class="fa-solid fa-location-dot"></i></i></a></li>
@@ -7,6 +8,7 @@
         <li><a href=""><i class="fa-regular fa-envelope"></i></a></li>
         <li class="subButton"><a href=""><i class="fa-regular fa-envelope"></i>Subscribe</a></li>
     </div>
+
     <nav>
         <ul>
             <li><a href="">HOME</a></li>
@@ -21,16 +23,52 @@
 </header>
 
 <style>
+
+    /* --- Header --- */
+
+    body {
+    margin: 0;
+}
+
     header {
         width: 100%;
     }
 
+    nav {
+        padding: 20px;
+        background-color: black;
+    }
+
+    a {
+        color: white;
+        font-size: 12px;
+        text-decoration: none;
+        font-family: 'Museo sans rounded webfont';
+    }
+
+    a:hover {
+        color: goldenrod;
+    }
+
+    ul {
+        display: grid;
+        grid-template-columns: repeat(7, auto);
+        width: 500px;
+        margin: auto;
+    }
+
+    h1 {
+        color: white;
+    }
+
+    /* --- UpperNav ---*/
+
     .subButton {
         background-color: rgb(0, 145, 255);
         padding: 5px 10px;
-        width: 75px;
         position: relative;
         bottom: 5px;
+        border-radius: 3px ;
     }
 
     .upperNav {
@@ -53,31 +91,5 @@
         display: grid;
         column-gap: 5px;
         grid-template-columns: repeat(2, auto);
-    }
-
-    nav {
-        padding: 20px;
-        background-color: black;
-    }
-
-    a {
-        color: white;
-        font-size: 12px;
-        text-decoration: none;
-    }
-
-    a:hover {
-        color: goldenrod;
-    }
-
-    ul {
-        display: grid;
-        grid-template-columns: repeat(7, auto);
-        width: 500px;
-        margin: auto;
-    }
-
-    h1 {
-        color: white;
     }
 </style>

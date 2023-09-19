@@ -15,8 +15,6 @@ import img11 from "../assets/shop_category/img11.webp";
 import img12 from "../assets/shop_category/img12.jpg";
 import img13 from "../assets/shop_category/img13.jpg";
 import img14 from "../assets/shop_category/img14.jpg";
-
-
 ---
 
 <StartLayout title="Hejhej">
@@ -62,28 +60,56 @@ import img14 from "../assets/shop_category/img14.jpg";
             <p class="imageContainer_text">HOME CINEMA</p>
         </div>
         <div>
-            <Image class="imageContainer_img" src={img10} alt="" format="webp" />
-            <p class="imageContainer_text">OUTLET - SAVE UP <br> TO 50% OFF</p>
+            <Image
+                class="imageContainer_img"
+                src={img10}
+                alt=""
+                format="webp"
+            />
+            <p class="imageContainer_text">
+                OUTLET - SAVE UP <br /> TO 50% OFF
+            </p>
         </div>
         <div>
-            <Image class="imageContainer_img" src={img11} alt="" format="webp" />
+            <Image
+                class="imageContainer_img"
+                src={img11}
+                alt=""
+                format="webp"
+            />
             <p class="imageContainer_text">EBAY SHOP</p>
         </div>
         <div>
-            <Image class="imageContainer_img" src={img12} alt="" format="webp" />
+            <Image
+                class="imageContainer_img"
+                src={img12}
+                alt=""
+                format="webp"
+            />
             <p class="imageContainer_text">CEILING SPEAKERS</p>
         </div>
         <div>
-            <Image class="imageContainer_img" src={img13} alt="" format="webp" />
+            <Image
+                class="imageContainer_img"
+                src={img13}
+                alt=""
+                format="webp"
+            />
             <p class="imageContainer_text">TVS</p>
         </div>
         <div>
-            <Image class="imageContainer_img" src={img14} alt="" format="webp" />
+            <Image
+                class="imageContainer_img"
+                src={img14}
+                alt=""
+                format="webp"
+            />
             <p class="imageContainer_text">VINYL LPS</p>
         </div>
-        <div>
-            <Image class="imageContainer_img" src={img1} alt="" format="webp" />
-            <p class="imageContainer_text">SHOP BY BRAND</p>
+        <div class="imageContainer_lastBox">
+            <div class="imageContainer_lastDiv">
+                <a class="imageContainer_button" href="">SHOP NOW</a>
+            </div>
         </div>
     </div>
 </StartLayout>
@@ -98,6 +124,29 @@ import img14 from "../assets/shop_category/img14.jpg";
         height: 200px;
         position: absolute;
         object-fit: cover;
+    }
+
+    .imageContainer_button {
+        position: relative;
+        width: 150px;
+        text-align: center;
+        background-color: rgba(41, 30, 2, 0.671);
+        color: white;
+        font-family: "Museo sans rounded webfont";
+        display: block;
+        text-decoration: none;
+        padding: 0.75em 0 0.75em 0em;
+        top: 4.75em;
+        left: 1.5em;
+    }
+
+    .imageContainer_lastBox {
+        background-color: white;
+    }
+
+    .imageContainer_lastDiv {
+        background-color: rgba(59, 42, 0, 0.564);
+        height: 200px;
     }
 
     .imageContainer_text {
@@ -122,16 +171,14 @@ import img14 from "../assets/shop_category/img14.jpg";
     }
 
     .imageContainer div {
-        transition: transform .2s;
+        transition: transform 0.2s;
         cursor: pointer;
     }
 
-
-.imageContainer div:hover {
-    transform: scale(1.15);
-    box-shadow: 0px 20px 40px 0px #0000001A;
-    background-color: white;
-    z-index: 1;
-
-}
+    .imageContainer div:hover {
+        transform: scale(1.15);
+        box-shadow: 0px 20px 40px 0px #0000001a;
+        background-color: white;
+        z-index: 1;
+    }
 </style>

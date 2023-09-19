@@ -5,8 +5,9 @@ import hifiLogo from "../assets/header/hifi_logo.jpg";
 ---
 
 <header>
-    <Image class="upperNav_logo" src={hifiLogo} alt="" format="webp" />
-
+    <a href="/">
+        <Image class="upperNav_logo" src={hifiLogo} alt="" format="webp" />
+    </a>
     <div class="upperNav">
         <form class="upperNav_search" action="">
             <input
@@ -30,7 +31,7 @@ import hifiLogo from "../assets/header/hifi_logo.jpg";
 
 <nav>
     <ul>
-        <li><a href="/index/">HOME</a></li>
+        <li><a href="/">HOME</a></li>
         <li><a href="">ABOUT US</a></li>
         <li><a href="">BRANDS</a></li>
         <li><a href="">BLOG</a></li>
@@ -94,6 +95,11 @@ import hifiLogo from "../assets/header/hifi_logo.jpg";
     .upperNav li {
         list-style: none;
         align-self: center;
+        transition: transform 0.2s;
+    }
+
+    .upperNav li:hover {
+        transform: scale(1.25);
     }
 
     .upperNav a {
@@ -124,5 +130,12 @@ import hifiLogo from "../assets/header/hifi_logo.jpg";
         position: relative;
         top: 2em;
         left: 10px;
+        transition: transform 0.2s;
+        cursor: pointer;
     }
+
+    .upperNav_logo:hover {
+        transform: scale(1.25);
+    }
+
 </style>

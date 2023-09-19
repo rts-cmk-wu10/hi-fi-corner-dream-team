@@ -1,0 +1,137 @@
+---
+import StartLayout from "../layouts/StartLayout.astro";
+import { Image } from "astro:assets";
+import img1 from "../assets/shop_category/img1.jpg";
+import img2 from "../assets/shop_category/img2.jpg";
+import img3 from "../assets/shop_category/img3.jpg";
+import img4 from "../assets/shop_category/img4.jpg";
+import img5 from "../assets/shop_category/img5.jpg";
+import img6 from "../assets/shop_category/img6.jpg";
+import img7 from "../assets/shop_category/img7.jpg";
+import img8 from "../assets/shop_category/img8.jpg";
+import img9 from "../assets/shop_category/img9.jpg";
+import img10 from "../assets/shop_category/img10.jpg";
+import img11 from "../assets/shop_category/img11.webp";
+import img12 from "../assets/shop_category/img12.jpg";
+import img13 from "../assets/shop_category/img13.jpg";
+import img14 from "../assets/shop_category/img14.jpg";
+
+
+---
+
+<StartLayout title="Hejhej">
+    <div class="imageContainer">
+        <div>
+            <Image class="imageContainer_img" src={img1} alt="" format="webp" />
+            <p class="imageContainer_text">SHOP BY BRAND</p>
+        </div>
+        <div>
+            <Image class="imageContainer_img" src={img2} alt="" format="webp" />
+            <p class="imageContainer_text">AMPLIFIERS</p>
+        </div>
+        <div>
+            <Image class="imageContainer_img" src={img3} alt="" format="webp" />
+            <p class="imageContainer_text">SPEAKERS</p>
+        </div>
+        <div>
+            <Image class="imageContainer_img" src={img4} alt="" format="webp" />
+            <p class="imageContainer_text">TURNTABLES</p>
+        </div>
+        <div>
+            <Image class="imageContainer_img" src={img5} alt="" format="webp" />
+            <p class="imageContainer_text">CD PLAYERS</p>
+        </div>
+        <div>
+            <Image class="imageContainer_img" src={img6} alt="" format="webp" />
+            <p class="imageContainer_text">STREAMERS</p>
+        </div>
+        <div>
+            <Image class="imageContainer_img" src={img7} alt="" format="webp" />
+            <p class="imageContainer_text">CABLES</p>
+        </div>
+        <div>
+            <Image class="imageContainer_img" src={img1} alt="" format="webp" />
+            <p class="imageContainer_text">FURNITURE</p>
+        </div>
+        <div>
+            <Image class="imageContainer_img" src={img8} alt="" format="webp" />
+            <p class="imageContainer_text">HEADPHONES</p>
+        </div>
+        <div>
+            <Image class="imageContainer_img" src={img9} alt="" format="webp" />
+            <p class="imageContainer_text">HOME CINEMA</p>
+        </div>
+        <div>
+            <Image class="imageContainer_img" src={img10} alt="" format="webp" />
+            <p class="imageContainer_text">OUTLET - SAVE UP <br> TO 50% OFF</p>
+        </div>
+        <div>
+            <Image class="imageContainer_img" src={img11} alt="" format="webp" />
+            <p class="imageContainer_text">EBAY SHOP</p>
+        </div>
+        <div>
+            <Image class="imageContainer_img" src={img12} alt="" format="webp" />
+            <p class="imageContainer_text">CEILING SPEAKERS</p>
+        </div>
+        <div>
+            <Image class="imageContainer_img" src={img13} alt="" format="webp" />
+            <p class="imageContainer_text">TVS</p>
+        </div>
+        <div>
+            <Image class="imageContainer_img" src={img14} alt="" format="webp" />
+            <p class="imageContainer_text">VINYL LPS</p>
+        </div>
+        <div>
+            <Image class="imageContainer_img" src={img1} alt="" format="webp" />
+            <p class="imageContainer_text">SHOP BY BRAND</p>
+        </div>
+    </div>
+</StartLayout>
+
+<style>
+    body {
+        background-color: black;
+    }
+
+    .imageContainer img {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        object-fit: cover;
+    }
+
+    .imageContainer_text {
+        position: relative;
+        width: 200px;
+        height: 120px;
+        margin: 0;
+        text-align: center;
+        padding-top: 5em;
+        background-color: rgba(59, 42, 0, 0.564);
+        color: white;
+        text-decoration: underline;
+        font-family: "Museo sans rounded webfont";
+    }
+
+    .imageContainer {
+        margin: 0 auto;
+        width: 800px;
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        grid-template-rows: auto;
+    }
+
+    .imageContainer div {
+        transition: transform .2s;
+        cursor: pointer;
+    }
+
+
+.imageContainer div:hover {
+    transform: scale(1.15);
+    box-shadow: 0px 20px 40px 0px #0000001A;
+    background-color: white;
+    z-index: 1;
+
+}
+</style>

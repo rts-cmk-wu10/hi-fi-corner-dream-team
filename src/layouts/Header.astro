@@ -1,34 +1,52 @@
 ---
-import "../styles/global.css" 
+import "../styles/global.css";
+import { Image } from "astro:assets";
+import hifiLogo from "../assets/header/hifi_logo.jpg";
 ---
+
 <header>
+    <a href="/">
+        <Image class="upperNav_logo" src={hifiLogo} alt="" format="webp" />
+    </a>
     <div class="upperNav">
-        <li><a href=""><i class="fa-solid fa-location-dot"></i></i></a></li>
+        <form class="upperNav_search" action="">
+            <input
+                placeholder="Search entire store here..."
+                type="search"
+                name=""
+                id=""
+                class="upperNav_searchInput"
+            />
+            <button type="submit"
+                ><i class="fa-solid fa-magnifying-glass"></i></button
+            >
+        </form>
+        <li><a href=""><i class="fa-solid fa-user"></i>ACCOUNT</a></li>
+        <li><a href=""><i class="fa-solid fa-cart-shopping"></i>CART</a></li>
+        <li><a href=""><i class="fa-solid fa-location-dot"></i></a></li>
         <li><a href=""><i class="fa-solid fa-phone"></i></a></li>
         <li><a href=""><i class="fa-regular fa-envelope"></i></a></li>
-        <li class="subButton"><a href=""><i class="fa-regular fa-envelope"></i>Subscribe</a></li>
     </div>
-
-    <nav>
-        <ul>
-            <li><a href="">HOME</a></li>
-            <li><a href="">ABOUT US</a></li>
-            <li><a href="">BRANDS</a></li>
-            <li><a href="">BLOG</a></li>
-            <li><a href="">EVENTS</a></li>
-            <li><a href="">SHOP</a></li>
-            <li><a href="">CONTACT US</a></li>
-        </ul>
-    </nav>
 </header>
 
-<style>
+<nav>
+    <ul>
+        <li><a href="/">HOME</a></li>
+        <li><a href="">ABOUT US</a></li>
+        <li><a href="">BRANDS</a></li>
+        <li><a href="">BLOG</a></li>
+        <li><a href="">EVENTS</a></li>
+        <li><a href="/shop_category/">SHOP</a></li>
+        <li><a href="">CONTACT US</a></li>
+    </ul>
+</nav>
 
+<style>
     /* --- Header --- */
 
     body {
-    margin: 0;
-}
+        margin: 0;
+    }
 
     header {
         width: 100%;
@@ -37,13 +55,14 @@ import "../styles/global.css"
     nav {
         padding: 20px;
         background-color: black;
+        border-top: 1px solid gray;
     }
 
     a {
         color: white;
         font-size: 12px;
         text-decoration: none;
-        font-family: 'Museo sans rounded webfont';
+        font-family: "Museo sans rounded webfont";
     }
 
     a:hover {
@@ -63,27 +82,24 @@ import "../styles/global.css"
 
     /* --- UpperNav ---*/
 
-    .subButton {
-        background-color: rgb(0, 145, 255);
-        padding: 5px 10px;
-        position: relative;
-        bottom: 5px;
-        border-radius: 3px ;
-    }
-
     .upperNav {
-        background-color: rgba(0, 0, 0, 0.582);
+        background-color: rgba(0, 0, 0, 0.507);
         display: grid;
-        grid-template-columns: repeat(4, auto);
+        grid-template-columns: repeat(7, auto);
         justify-content: end;
         column-gap: 2em;
-        padding-right: 2em;
-        padding: 1em;
+        padding: 0em 2em 3em 1em;
         height: 20px;
     }
 
     .upperNav li {
         list-style: none;
+        align-self: center;
+        transition: transform 0.2s;
+    }
+
+    .upperNav li:hover {
+        transform: scale(1.25);
     }
 
     .upperNav a {
@@ -92,4 +108,34 @@ import "../styles/global.css"
         column-gap: 5px;
         grid-template-columns: repeat(2, auto);
     }
+
+    .upperNav_search button {
+        border: none;
+        outline: none;
+        background-color: white;
+        cursor: pointer;
+        height: 30px;
+    }
+
+    .upperNav_searchInput {
+        width: 300px;
+        border: none;
+        outline: none;
+        height: 30px;
+    }
+
+    .upperNav_logo {
+        width: 50px;
+        height: 50px;
+        position: relative;
+        top: 2em;
+        left: 10px;
+        transition: transform 0.2s;
+        cursor: pointer;
+    }
+
+    .upperNav_logo:hover {
+        transform: scale(1.25);
+    }
+
 </style>

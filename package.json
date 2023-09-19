@@ -9,7 +9,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "json-server": "json-server --watch db.json",
+    "json-server": "json-server --watch ./src/db.json",
     "fix": "standard --fix"
   },
   "dependencies": {

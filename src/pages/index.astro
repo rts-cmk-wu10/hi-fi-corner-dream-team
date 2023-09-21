@@ -4,7 +4,9 @@ import { Image } from "astro:assets";
 import backgroundsIMGone from "../assets/backgrounds/frontPage.jpg.jpg";
 import backgroundsIMGtwo from "../assets/backgrounds/frontPageMiddle.jpg.jpg";
 import "../styles/global.css";
-import Gallery from "../components/Gallery.astro"
+import Gallery from "../components/Gallery.astro";
+import Socials from "../assets/socials.webp"
+
 ---
 
 <StartLayout title="HIFI-corner">
@@ -36,15 +38,40 @@ import Gallery from "../components/Gallery.astro"
 				<p>to stunning new premises on joppa road</p>
 			</div>
 		</div>
-		<Gallery></Gallery>
+		<Gallery />
+
+		<div class="socials">
+			<div class="socials__box">
+				<Image src={} alt="" class="" />
+			</div>
+			<div class="socials__box">
+				<Image src={} alt="" class="" />
+			</div>
+			<div class="socials__box">
+				<Image src={} alt="" class="" />
+			</div>
+		</div>
+		<div>
+			<p>
+				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id
+				omnis labore, perspiciatis facere aperiam quia.
+			</p>
+			<p>
+				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id
+				omnis labore, perspiciatis facere aperiam quia.
+			</p>
+			<p>
+				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id
+				omnis labore, perspiciatis facere aperiam quia.
+			</p>
+		</div>
 	</main>
 </StartLayout>
 
 <style>
-
-main{
-	font-family:"Museo sans rounded webfont", sans-serif; 
-}
+	main {
+		font-family: "Museo sans rounded webfont", sans-serif;
+	}
 
 	.imgWidth {
 		width: 100%;
@@ -71,7 +98,7 @@ main{
 		justify-self: center;
 		align-self: center;
 	}
-	
+
 	.box__box > p {
 		text-align: center;
 		text-transform: uppercase;
@@ -109,12 +136,13 @@ main{
 		align-self: center;
 	}
 
-	.backgroundIMGtwo, .middle__box{
+	.backgroundIMGtwo,
+	.middle__box {
 		grid-column: 1 / -1;
 		grid-row: 1 / -1;
 	}
 
-	.backgroundIMGtwo{
+	.backgroundIMGtwo {
 		height: 400px;
 	}
 

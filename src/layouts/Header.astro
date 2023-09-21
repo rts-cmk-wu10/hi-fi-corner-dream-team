@@ -5,10 +5,11 @@ import hifiLogo from "../assets/header/hifi_logo.jpg";
 ---
 
 <header>
-    <a href="/">
-        <Image class="upperNav_logo" src={hifiLogo} alt="" format="webp" />
-    </a>
     <div class="upperNav">
+        <a class="homeButton" href="/">
+            <Image class="upperNav_logo" src={hifiLogo} alt="" format="webp" />
+        </a>
+
         <form class="upperNav_search" action="">
             <input
                 placeholder="Search entire store here..."
@@ -21,25 +22,29 @@ import hifiLogo from "../assets/header/hifi_logo.jpg";
                 ><i class="fa-solid fa-magnifying-glass"></i></button
             >
         </form>
-        <li><a href=""><i class="fa-solid fa-user"></i>ACCOUNT</a></li>
-        <li><a href=""><i class="fa-solid fa-cart-shopping"></i>CART</a></li>
-        <li><a href=""><i class="fa-solid fa-location-dot"></i></a></li>
-        <li><a href=""><i class="fa-solid fa-phone"></i></a></li>
-        <li><a href=""><i class="fa-regular fa-envelope"></i></a></li>
+        <ul>
+            <li><a href=""><i class="fa-solid fa-user"></i>ACCOUNT</a></li>
+            <li>
+                <a href=""><i class="fa-solid fa-cart-shopping"></i>CART</a>
+            </li>
+            <li><a href=""><i class="fa-solid fa-location-dot"></i></a></li>
+            <li><a href=""><i class="fa-solid fa-phone"></i></a></li>
+            <li><a href=""><i class="fa-regular fa-envelope"></i></a></li>
+        </ul>
     </div>
-</header>
 
-<nav>
-    <ul>
-        <li><a href="/">HOME</a></li>
-        <li><a href="">ABOUT US</a></li>
-        <li><a href="">BRANDS</a></li>
-        <li><a href="">BLOG</a></li>
-        <li><a href="">EVENTS</a></li>
-        <li><a href="/shop-category/">SHOP</a></li>
-        <li><a href="">CONTACT US</a></li>
-    </ul>
-</nav>
+    <nav>
+        <ul>
+            <li><a href="/">HOME</a></li>
+            <li><a href="">ABOUT US</a></li>
+            <li><a href="">BRANDS</a></li>
+            <li><a href="">BLOG</a></li>
+            <li><a href="">EVENTS</a></li>
+            <li><a href="/shop-category/">SHOP</a></li>
+            <li><a href="">CONTACT US</a></li>
+        </ul>
+    </nav>
+</header>
 
 <style>
     /* --- Header --- */
@@ -50,6 +55,7 @@ import hifiLogo from "../assets/header/hifi_logo.jpg";
 
     header {
         width: 100%;
+        position: absolute;
     }
 
     nav {
@@ -85,11 +91,23 @@ import hifiLogo from "../assets/header/hifi_logo.jpg";
     .upperNav {
         background-color: rgba(0, 0, 0, 0.507);
         display: grid;
-        grid-template-columns: repeat(7, auto);
+        grid-template-columns: 4fr 1fr 1fr;
         justify-content: end;
         column-gap: 2em;
-        padding: 0em 2em 3em 1em;
-        height: 20px;
+        padding: 1em 2em 3em 1em;
+        height: 80px;
+    }
+
+    form {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        width: 313px;
+        height: 30px;
+    }
+
+    .upperNav ul {
+        padding-left: 3em;
+        column-gap: 1em;
     }
 
     .upperNav li {
@@ -109,6 +127,10 @@ import hifiLogo from "../assets/header/hifi_logo.jpg";
         grid-template-columns: repeat(2, auto);
     }
 
+.homeButton {
+    width: 50px;
+}
+
     .upperNav_search button {
         border: none;
         outline: none;
@@ -127,9 +149,6 @@ import hifiLogo from "../assets/header/hifi_logo.jpg";
     .upperNav_logo {
         width: 50px;
         height: 50px;
-        position: relative;
-        top: 2em;
-        left: 10px;
         transition: transform 0.2s;
         cursor: pointer;
     }
@@ -137,5 +156,4 @@ import hifiLogo from "../assets/header/hifi_logo.jpg";
     .upperNav_logo:hover {
         transform: scale(1.25);
     }
-
 </style>

@@ -5,10 +5,9 @@ import backgroundsIMGone from "../assets/backgrounds/frontPage.jpg.jpg";
 import backgroundsIMGtwo from "../assets/backgrounds/frontPageMiddle.jpg.jpg";
 import "../styles/global.css";
 import Gallery from "../components/Gallery.astro";
-import SocialGramophone from "../assets/socials/gramophone.webp"
-import SocialHeadset from "../assets/socials/sennheiser_headset.webp"
-import SocialReceiver from "../assets/socials/receiver.webp"
-
+import SocialGramophone from "../assets/socials/gramophone.jpg";
+import SocialHeadset from "../assets/socials/sennheiser_headset.jpg";
+import SocialReceiver from "../assets/socials/receiver.jpg";
 ---
 
 <StartLayout title="HIFI-corner">
@@ -44,28 +43,56 @@ import SocialReceiver from "../assets/socials/receiver.webp"
 
 		<div class="socials">
 			<div class="socials__box">
-				<Image src={SocialGramophone} alt="gramophone" class="" />
+				<Image
+					src={SocialGramophone}
+					alt="gramophone"
+					class="socials__img imgOne"
+				/>
+				<div class="iconFacebook">
+					<i class="fa-brands fa-facebook" style="color: #d3cfcf;"
+					></i>
+				</div>
 			</div>
 			<div class="socials__box">
-				<Image src={SocialHeadset} alt="headset" class="" />
+				<Image
+					src={SocialHeadset}
+					alt="headset"
+					class="socials__img imgTwo"
+				/>
+				<div class="iconB">
+					<i class="fa-solid fa-b fa-2xl" style="color: #8d8989;"></i>
+				</div>
 			</div>
 			<div class="socials__box">
-				<Image src={SocialReceiver} alt="receiver" class="" />
+				<Image
+					src={SocialReceiver}
+					alt="receiver"
+					class="socials__img"
+				/>
 			</div>
 		</div>
-		<div>
-			<p>
-				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id
-				omnis labore, perspiciatis facere aperiam quia.
-			</p>
-			<p>
-				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id
-				omnis labore, perspiciatis facere aperiam quia.
-			</p>
-			<p>
-				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id
-				omnis labore, perspiciatis facere aperiam quia.
-			</p>
+		<div class="information">
+			<div class="information__one">
+				<h5>history</h5>
+				<p>
+					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id
+					omnis labore, perspiciatis facere aperiam quia.
+				</p>
+			</div>
+			<div class="information__two">
+				<h5>news</h5>
+				<p>
+					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id
+					omnis labore, perspiciatis facere aperiam quia.
+				</p>
+			</div>
+			<div class="information__three">
+				<h5>shop</h5>
+				<p>
+					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id
+					omnis labore, perspiciatis facere aperiam quia.
+				</p>
+			</div>
 		</div>
 	</main>
 </StartLayout>
@@ -131,9 +158,6 @@ import SocialReceiver from "../assets/socials/receiver.webp"
 		grid-template-columns: 1fr 1fr 1fr;
 	}
 
-	.backgroundIMGtwo {
-	}
-
 	.middle__box {
 		align-self: center;
 	}
@@ -153,5 +177,54 @@ import SocialReceiver from "../assets/socials/receiver.webp"
 		text-align: center;
 		font-size: 3.5em;
 		text-transform: uppercase;
+	}
+
+	.socials {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.socials__box {
+		display: grid;
+	}
+
+	.iconFacebook,
+	.imgOne {
+		grid-column: 1;
+		grid-row: 1;
+	}
+	.iconFacebook {
+		margin: 0 auto;
+		align-self: center;
+	}
+
+	.iconB,
+	.imgTwo {
+		grid-column: 2;
+		grid-row: 1;
+	}
+	.iconB {
+		margin: 0 auto;
+		align-self: center;
+	}
+
+	.socials__img {
+		width: 100%;
+	}
+
+	.information {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+	}
+
+	.information__one {
+		grid-column: 2/3;
+	}
+	.information__two {
+		grid-column: 3/4;
+	}
+
+	.information__three {
+		grid-column: 4/5;
 	}
 </style>

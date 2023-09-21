@@ -27,7 +27,7 @@ import galleryTwo from "../assets/gallery/gallery2.png";
         },
         autoplay: {
             delay: 2500,
-            disableOnInteraction: false,
+            disableOnInteraction: true,
         },
     });
 </script>
@@ -38,31 +38,32 @@ import galleryTwo from "../assets/gallery/gallery2.png";
         <div class="swiper-wrapper">
             <!-- Slides -->
             <div class="swiper-slide">
-                <h3>primaluna sounds</h3>
                 <Image
                     format="webp"
                     src={galleryOne}
                     alt="gallery"
-                    class="imgWidth"
-                />
+                    class="imgWidth imgOne"
+                /><div class="gallery__heading"><h3>primaluna sounds</h3></div>
             </div>
             <div class="swiper-slide">
-                <h3>text</h3>
                 <Image
                     format="webp"
                     src={galleryOne}
                     alt="gallery"
-                    class="imgWidth"
-                />
+                    class="imgWidth imgTwo"
+                /><div class="gallery__heading">
+                    <h3>abrakadrabra penis</h3>
+                </div>
             </div>
             <div class="swiper-slide">
-                <h3>text</h3>
                 <Image
                     format="webp"
                     src={galleryOne}
                     alt="gallery"
-                    class="imgWidth"
-                />
+                    class="imgWidth imgThree"
+                /><div class="gallery__heading">
+                    <h3>hokuspokus fidelihut</h3>
+                </div>
             </div>
         </div>
 
@@ -73,18 +74,39 @@ import galleryTwo from "../assets/gallery/gallery2.png";
     </div>
 </div>
 
-
 <style>
     .imgWidth {
         max-width: 100%;
+        justify-self: center;
     }
 
-    .swiper-slide{
+    .swiper-slide {
         display: flex;
         justify-content: center;
+        display: grid;
+        grid-template-columns: 200px 1fr 200px;
+        margin: 0 1em;
     }
 
-    .gallery{
+    .swiper-slide,
+    .gallery__heading {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .gallery__heading {
+        font-size: 2em;
+        padding-top: 2em;
+        color: var(--text-color);
+        text-transform: uppercase;
+        padding-left: 0.5em;
+    }
+
+    .gallery__heading > h3 {
+        font-weight: 300;
+    }
+
+    .gallery {
         width: 100%;
     }
 
@@ -92,5 +114,14 @@ import galleryTwo from "../assets/gallery/gallery2.png";
         width: 90%;
         height: 500px;
         margin-bottom: 4em;
+    }
+
+    .swiper-button-next, .swiper-button-prev {
+        color: var(--text-color);
+        --swiper-navigation-size: 70px;
+    }
+    
+    .swiper-pagination{
+        --swiper-pagination-color:var(--text-color)
     }
 </style>

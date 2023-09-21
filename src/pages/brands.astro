@@ -1,0 +1,23 @@
+---
+import StartLayout from "../layouts/StartLayout.astro";
+import { Image } from "astro:assets";
+import Background from "../assets/brands/background.png";
+---
+
+<StartLayout title="Brands - HIFI-corner">
+    <div class="speakerBackground">
+        <Image
+            src={Background}
+            alt="speakers"
+            class="background"
+            format="webp"
+        />
+    </div>
+</StartLayout>
+
+<style>
+    .background{
+      width: 100%;
+      height: auto;
+    }
+</style>

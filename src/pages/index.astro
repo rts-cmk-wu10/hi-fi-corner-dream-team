@@ -11,94 +11,100 @@ import SocialReceiver from "../assets/socials/receiver.jpg";
 ---
 
 <StartLayout title="HIFI-corner">
-	<main>
-		<div class="box">
+	<div class="box">
+		<Image
+			format="webp"
+			src={backgroundsIMGone}
+			alt="speaker background"
+			class="backgroundIMG imgWidth"
+		/>
+		<div class="box__box">
+			<div class="box__hifi">
+				<p>hi</p>
+				<p>fi</p>
+			</div>
+			<p class="box__address">hificorner.co.uk</p>
+		</div>
+	</div>
+
+	<div class="middle">
+		<Image
+			src={backgroundsIMGtwo}
+			alt="background middle"
+			class="backgroundIMGtwo imgWidth"
+		/>
+		<div class="middle__box">
+			<p>our edinburgh showroom has now moved</p>
+			<p>to stunning new premises on joppa road</p>
+		</div>
+	</div>
+	<Gallery />
+
+	<div class="socials">
+		<div class="socials__box">
 			<Image
+				src={SocialGramophone}
+				alt="gramophone"
+				class="socials__img imgOne"
 				format="webp"
-				src={backgroundsIMGone}
-				alt="speaker background"
-				class="backgroundIMG imgWidth"
 			/>
-			<div class="box__box">
-				<div class="box__hifi">
-					<p>hi</p>
-					<p>fi</p>
-				</div>
-				<p class="box__address">hificorner.co.uk</p>
+			<div class="iconFacebook">
+				<i class="fa-brands fa-facebook fa-2xl" style="color: #ffffff;"
+				></i>
 			</div>
 		</div>
-
-		<div class="middle">
+		<div class="socials__box">
 			<Image
-				src={backgroundsIMGtwo}
-				alt="background middle"
-				class="backgroundIMGtwo imgWidth"
+				src={SocialHeadset}
+				alt="headset"
+				class="socials__img imgTwo"
+				format="webp"
 			/>
-			<div class="middle__box">
-				<p>our edinburgh showroom has now moved</p>
-				<p>to stunning new premises on joppa road</p>
+			<div class="iconB">
+				<i
+					class="fa-brands fa-blogger fa-2xl iconB"
+					style="color: #ffffff;"></i>
 			</div>
 		</div>
-		<Gallery />
-
-		<div class="socials">
-			<div class="socials__box">
-				<Image
-					src={SocialGramophone}
-					alt="gramophone"
-					class="socials__img imgOne"
-				/>
-				<div class="iconFacebook">
-					<i class="fa-brands fa-facebook" style="color: #d3cfcf;"
-					></i>
-				</div>
-			</div>
-			<div class="socials__box">
-				<Image
-					src={SocialHeadset}
-					alt="headset"
-					class="socials__img imgTwo"
-				/>
-				<div class="iconB">
-					<i class="fa-solid fa-b fa-2xl" style="color: #8d8989;"></i>
-				</div>
-			</div>
-			<div class="socials__box">
-				<Image
-					src={SocialReceiver}
-					alt="receiver"
-					class="socials__img"
-				/>
+		<div class="socials__box">
+			<Image
+				src={SocialReceiver}
+				alt="receiver"
+				class="socials__img imgThree"
+				format="webp"
+			/>
+			<div class="iconTwitter">
+				<i
+					class="fa-brands fa-square-twitter fa-2xl"
+					style="color: #ffffff;"></i>
 			</div>
 		</div>
-		<div class="information">
-			<div class="information__one">
-				<h5>history</h5>
-				<p>
-					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id
-					omnis labore, perspiciatis facere aperiam quia.
-				</p>
-			</div>
-			<div class="information__two">
-				<h5>news</h5>
-				<p>
-					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id
-					omnis labore, perspiciatis facere aperiam quia.
-				</p>
-			</div>
-			<div class="information__three">
-				<h5>shop</h5>
-				<p>
-					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id
-					omnis labore, perspiciatis facere aperiam quia.
-				</p>
-			</div>
+	</div>
+	<div class="information">
+		<div class="information__one">
+			<h5 class="information__heading">history</h5>
+			<p>
+				established in the laste 1960s, our family owned business is
+				based in edinburgh and falkirk, servicing customers across the
+				uk.
+			</p>
 		</div>
-	</main>
+		<div class="information__two">
+			<h5 class="information__heading">news</h5>
+			<p>
+				check out our latest news stories for all the up to date hi-fi
+				corner products and launches.
+			</p>
+		</div>
+		<div class="information__three">
+			<h5 class="information__heading">shop</h5>
+			<p>have a look in our online shop for great products and deals.</p>
+		</div>
+	</div>
 </StartLayout>
 
 <style>
-	main {
+	body {
 		font-family: "Museo sans rounded webfont", sans-serif;
 	}
 
@@ -107,7 +113,7 @@ import SocialReceiver from "../assets/socials/receiver.jpg";
 	}
 
 	.backgroundIMG {
-		height: auto;
+		height: 100vh;
 	}
 
 	.box {
@@ -188,6 +194,9 @@ import SocialReceiver from "../assets/socials/receiver.jpg";
 		display: grid;
 	}
 
+	.socials__img {
+		width: 100%;
+	}
 	.iconFacebook,
 	.imgOne {
 		grid-column: 1;
@@ -200,7 +209,7 @@ import SocialReceiver from "../assets/socials/receiver.jpg";
 
 	.iconB,
 	.imgTwo {
-		grid-column: 2;
+		grid-column: 1;
 		grid-row: 1;
 	}
 	.iconB {
@@ -208,13 +217,29 @@ import SocialReceiver from "../assets/socials/receiver.jpg";
 		align-self: center;
 	}
 
-	.socials__img {
-		width: 100%;
+	.iconTwitter,
+	.imgThree {
+		grid-column: 1;
+		grid-row: 1;
+	}
+
+	.iconTwitter {
+		margin: 0 auto;
+		align-self: center;
+	}
+
+	.fa-2xl {
+		font-size: 8.5em;
 	}
 
 	.information {
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
+		background-color: black;
+		color: white;
+		gap: 4em;
+		padding-top: 3em;
+		padding-bottom: 6em;
 	}
 
 	.information__one {
@@ -226,5 +251,24 @@ import SocialReceiver from "../assets/socials/receiver.jpg";
 
 	.information__three {
 		grid-column: 4/5;
+	}
+
+	.information__one > p,
+	.information__two > p,
+	.information__three > p {
+		padding-top: 0.7em;
+		text-align: center;
+		font-size: 1.14em;
+		text-transform: uppercase;
+	}
+
+	.information__heading {
+		color: var(--text-color);
+		border: 1px solid white;
+		text-align: center;
+		margin: 0 6em;
+		font-size: 1.3em;
+		padding: 0.2em 0.6em;
+		text-transform: uppercase;
 	}
 </style>

@@ -18,6 +18,7 @@ import img14 from "../assets/shop_category/img14.jpg";
 ---
 
 <StartLayout title="Hejhej">
+    <main>
     <section class="imageContainer">
         <div>
             <a href="">
@@ -192,11 +193,16 @@ import img14 from "../assets/shop_category/img14.jpg";
             </div>
         </div>
     </section>
+</main>
 </StartLayout>
 
 <style>
     body {
         background-color: black;
+    }
+    
+    main {
+        padding-top: 9em;
     }
 
     .imageContainer img {
@@ -232,7 +238,7 @@ import img14 from "../assets/shop_category/img14.jpg";
     .imageContainer_text {
         position: relative;
         width: 200px;
-        height: 120px;
+        height: 200px;
         margin: 0;
         text-align: center;
         padding-top: 5em;
@@ -248,6 +254,7 @@ import img14 from "../assets/shop_category/img14.jpg";
         display: grid;
         grid-template-columns: repeat(4, auto);
         grid-template-rows: auto;
+        height: 800px;
     }
 
     .imageContainer div {

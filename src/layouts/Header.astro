@@ -6,6 +6,7 @@ import hifiLogo from "../assets/header/hifi_logo.jpg";
 
 <script>
     const getURL = window.location.href
+    if(!getURL.includes('/shop-category/')) {
     console.log(getURL)
     if(!getURL.includes('shop')) {
         document.querySelector('header').style.position = 'absolute'
@@ -116,6 +117,7 @@ import hifiLogo from "../assets/header/hifi_logo.jpg";
     .upperNav ul {
         padding-left: 3em;
         column-gap: 1em;
+        grid-template-columns: repeat(5, auto);
     }
 
     .upperNav li {

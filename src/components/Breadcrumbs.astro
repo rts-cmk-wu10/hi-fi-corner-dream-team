@@ -1,0 +1,30 @@
+---
+import '../styles/global.css'
+---
+
+<div class="breadcrumbs">
+  <a  class="bread__link" href="/">Home</a>
+  <p>/</p>
+  <a class="bread__link" href="/shop_category/">Amplifier</a>
+</div>
+
+<style>
+  .breadcrumbs {
+    display: flex;
+    gap: 1em;
+    padding: 2em 0;
+  }
+
+  a {
+    color: initial;
+    text-decoration: none;
+  }
+
+  .bread__link {
+    color: var(--text-color);
+  }
+
+  a:last-child {
+    color: initial;
+  }
+</style>

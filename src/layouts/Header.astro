@@ -4,6 +4,14 @@ import { Image } from "astro:assets";
 import hifiLogo from "../assets/header/hifi_logo.jpg";
 ---
 
+<script>
+    const getURL = window.location.href
+    console.log(getURL)
+    if(!getURL.includes('/shop-category/')) {
+        document.querySelector('header').style.position = 'absolute'
+    }
+</script>
+
 <header>
     <div class="upperNav">
         <a class="homeButton" href="/">
@@ -55,7 +63,6 @@ import hifiLogo from "../assets/header/hifi_logo.jpg";
 
     header {
         width: 100%;
-        position: absolute;
     }
 
     nav {

@@ -18,7 +18,9 @@ import img14 from "../assets/shop_category/img14.jpg";
 ---
 
 <StartLayout title="Categories - HIFI-corner">
+
     <main>
+    <div class="grid__con">
         <section class="imageContainer">
             <div>
                 <a href="">
@@ -193,17 +195,13 @@ import img14 from "../assets/shop_category/img14.jpg";
                 </div>
             </div>
         </section>
-    </main>
+    </div>
 </StartLayout>
 
 <style>
     body {
         background-color: black;
     }
-
-    main {
-    }
-
     .imageContainer img {
         width: 200px;
         height: 200px;
@@ -259,6 +257,13 @@ import img14 from "../assets/shop_category/img14.jpg";
     .imageContainer div {
         transition: transform 0.2s;
         cursor: pointer;
+    }
+
+    .grid__con {
+        height: calc(100vh - 82px - 142px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .imageContainer div:hover {

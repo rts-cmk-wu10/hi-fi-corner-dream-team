@@ -7,6 +7,8 @@ import hifiLogo from "../assets/header/hifi_logo.jpg";
 <script>
     const getURL = window.location.href
     if(!getURL.includes('/shop-category/')) {
+    console.log(getURL)
+    if(!getURL.includes('shop')) {
         document.querySelector('header').style.position = 'absolute'
     }
 </script>
@@ -62,6 +64,7 @@ import hifiLogo from "../assets/header/hifi_logo.jpg";
 
     header {
         width: 100%;
+        max-height: 142px;
     }
 
     nav {

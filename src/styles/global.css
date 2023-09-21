@@ -1,6 +1,10 @@
+:root {
+  --text-color: #b19b61;
+}
+
 @font-face {
   font-family: 'Museo sans rounded webfont';
-  src: url('../../public/fonts/MuseoSansRounded100.woff') format('woff');
+  src: url('/fonts/MuseoSansRounded100.woff') format('woff');
   font-weight: 100;
   font-style: normal;
   font-display: swap;
@@ -8,7 +12,7 @@
 
 @font-face {
   font-family: 'Museo sans rounded webfont';
-  src: url('../../public/fonts/MuseoSansRounded300.woff') format('woff');
+  src: url('/fonts/MuseoSansRounded300.woff') format('woff');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -16,7 +20,7 @@
 
 @font-face {
   font-family: 'Museo sans rounded webfont';
-  src: url('../../public/fonts/MuseoSansRounded500.woff') format('woff');
+  src: url('/fonts/MuseoSansRounded500.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -24,7 +28,7 @@
 
 @font-face {
   font-family: 'Museo sans rounded webfont';
-  src: url('../../public/fonts/MuseoSansRounded700.woff') format('woff');
+  src: url('/fonts/MuseoSansRounded700.woff') format('woff');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -32,7 +36,7 @@
 
 @font-face {
   font-family: 'Museo sans rounded webfont';
-  src: url('../../public/fonts/MuseoSansRounded900.woff') format('woff');
+  src: url('/fonts/MuseoSansRounded900.woff') format('woff');
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -40,7 +44,7 @@
 
 @font-face {
   font-family: 'Museo sans rounded webfont';
-  src: url('../../public/fonts/MuseoSansRounded1000.woff') format('woff');
+  src: url('/fonts/MuseoSansRounded1000.woff') format('woff');
   font-weight: 1000;
   font-style: normal;
   font-display: swap;
@@ -48,7 +52,7 @@
 
 @font-face {
   font-family: 'Museo sans rounded';
-  src: url('../../public/fonts/MuseoSansRounded100.otf') format('otf');
+  src: url('/fonts/MuseoSansRounded100.otf') format('otf');
   font-weight: 100;
   font-style: normal;
   font-display: swap;
@@ -56,7 +60,7 @@
 
 @font-face {
   font-family: 'Museo sans rounded';
-  src: url('../../public/fonts/MuseoSansRounded300.otf') format('otf');
+  src: url('/fonts/MuseoSansRounded300.otf') format('otf');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -64,7 +68,7 @@
 
 @font-face {
   font-family: 'Museo sans rounded';
-  src: url('../../public/fonts/MuseoSansRounded500.otf') format('otf');
+  src: url('/fonts/MuseoSansRounded500.otf') format('otf');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -72,7 +76,7 @@
 
 @font-face {
   font-family: 'Museo sans rounded';
-  src: url('../../public/fonts/MuseoSansRounded700.otf') format('otf');
+  src: url('/fonts/MuseoSansRounded700.otf') format('otf');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -80,7 +84,7 @@
 
 @font-face {
   font-family: 'Museo sans rounded';
-  src: url('../../public/fonts/MuseoSansRounded900.otf') format('otf');
+  src: url('/fonts/MuseoSansRounded900.otf') format('otf');
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -88,7 +92,7 @@
 
 @font-face {
   font-family: 'Museo sans rounded';
-  src: url('../../public/fonts/MuseoSansRounded1000.otf') format('otf');
+  src: url('/fonts/MuseoSansRounded1000.otf') format('otf');
   font-weight: 1000;
   font-style: normal;
   font-display: swap;

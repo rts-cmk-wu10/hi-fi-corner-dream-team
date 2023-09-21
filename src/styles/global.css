@@ -1,3 +1,7 @@
+:root {
+  --text-color: #b19b61;
+}
+
 @font-face {
   font-family: 'Museo sans rounded webfont';
   src: url('/fonts/MuseoSansRounded100.woff') format('woff');

@@ -17,9 +17,10 @@ import "../styles/global.css";
         <div class="footerDiv3">
             <p><i class="fa-solid fa-globe"></i>Worldpay</p>
             <p><i class="fa-brands fa-cc-visa"></i></p>
-            <p></p>
-            <p></p>
-            <p></p>
+            <p><i class="fa-brands fa-cc-mastercard"></i></p>
+            <p><i class="fa-brands fa-cc-mastercard"></i></p>
+            <p><i class="fa-brands fa-cc-jcb"></i></p>
+            <p><i class="fa-brands fa-paypal"></i>PayPal</p>
         </div>
     </div>
 </footer>
@@ -27,7 +28,6 @@ import "../styles/global.css";
 <style>
     footer {
         background-color: rgb(205, 176, 103);
-        border-radius: 0px 0px 15px 15px;
         max-height: 82px;
     }
 
@@ -62,6 +62,9 @@ import "../styles/global.css";
 
     .footerDiv3 {
         grid-column: 4/5;
+        display: grid;
+        grid-template-columns: repeat(6, auto);
+        grid-template-rows: 1fr;
     }
 
     .footerDiv3 p {

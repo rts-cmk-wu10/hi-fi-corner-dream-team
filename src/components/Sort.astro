@@ -1,0 +1,62 @@
+<div class="sort__div">
+  <div class="sort__by__con">
+    <p class="p--upper">sort by:</p>
+    <select name="sort__by" >
+      <option value="price-ascending">Price ascending</option>
+      <option value="price-descending">Price descending</option>
+      <option value="name">Name</option>
+      <option value="offer">Offer</option>
+    </select>
+  </div>
+  <div class="view__as__con">
+    <p class="p--upper">view as:</p>
+    <i class="fa-solid fa-table-cells-large"></i>
+    <i class="fa-solid fa-list"></i>
+  </div>
+  <p class="sort__by__number__items">133 items(s)</p>
+  <div class="sort__by__numbers">
+    <p class="p--upper">show:</p>
+    <select name="show__numbers">
+      <option value="20">20</option>
+      <option value="50">50</option>
+      <option value="100">100</option>
+    </select>
+  </div>
+</div>
+
+<style>
+  .sort__div {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 2.5fr 0.7fr 0.5fr;
+    align-content: center;
+    background-color: var(--filter-bg-color);
+    padding: 2em;
+    gap: 1em;
+  }
+
+  .sort__by__con, .view__as__con, .sort__by__numbers {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+  }
+
+  .fa-list, .fa-table-cells-large {
+    color: var(--text-color);
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  .fa-list:hover, .fa-table-cells-large:hover {
+    transform: scale(1.25);
+    color: goldenrod;
+  }
+
+  .sort__by__numbers {
+    grid-column: 5 / 6;
+  }
+
+  .sort__by__number__items {
+    grid-column: 4 / 5;
+    justify-self: center;
+  }
+</style>

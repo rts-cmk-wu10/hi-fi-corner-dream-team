@@ -8,29 +8,17 @@ import { Image } from "astro:assets";
 
 <script>
   import getDataFromApi from "../scripts/getData";
- 
+  import { makeProductElement } from "../scripts/makeProductElement";
+  
   const productGrid = document.querySelector('.grid__col4')
-
   const data = await getDataFromApi('products')
+  document.addEventListener('DOMContentLoaded', () => {
   data.forEach(product => {
     const newProduct = makeProductElement(product.pictures[0], product.title, product.price, product.discount)
     productGrid.appendChild(newProduct)
-    
   });
-
-
-  function makeProductElement(image ,title, price, discountPrice) {
-  const newDiv = document.createElement('div')
-  const imgSrc = `../${image}`
-  newDiv.classList.add('product')
-  newDiv.innerHTML = `
-    <img src="${imgSrc}" alt="Image"/>
-    <h4>${title}</h4>
-    <p>${price}</p>
-    <p>${price}</p>
-  `
-  return newDiv
-} 
+  }) 
+  
 </script>
 
 <StartLayout title="Search products - HIFI-corner">
@@ -108,14 +96,14 @@ import { Image } from "astro:assets";
   .grid__col4 {
     padding: 1em 0;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1em;
   }
 
   .product {
     border: 1px solid black;
-    width: 100%;
-    height: 300px
+    display: flex;
+    flex-direction: column;
   }
 
   ul {

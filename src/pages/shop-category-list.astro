@@ -3,22 +3,25 @@ import StartLayout from '../layouts/StartLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import '../styles/global.css';
 import Sort from '../components/Sort.astro';
-import { Image } from "astro:assets";
+import { Image } from 'astro:assets';
+import '../styles/product.css'
 ---
 
 <script>
-  import getDataFromApi from "../scripts/getData";
-  import { makeProductElement } from "../scripts/makeProductElement";
-  
-  const productGrid = document.querySelector('.grid__col4')
-  const data = await getDataFromApi('products')
-  document.addEventListener('DOMContentLoaded', () => {
-  data.forEach(product => {
-    const newProduct = makeProductElement(product.pictures[0], product.title, product.price, product.discount)
-    productGrid.appendChild(newProduct)
+  import getDataFromApi from '../scripts/getData';
+  import { makeProductElement } from '../scripts/makeProductElement';
+
+  const productGrid = document.querySelector('.grid__col4');
+  const data = await getDataFromApi('products');
+  data.forEach((product) => {
+    const newProduct = makeProductElement(
+      product.pictures[0],
+      product.title,
+      product.price,
+      product.discount
+    );
+    productGrid.appendChild(newProduct);
   });
-  }) 
-  
 </script>
 
 <StartLayout title="Search products - HIFI-corner">
@@ -77,10 +80,9 @@ import { Image } from "astro:assets";
       </section>
       <section class="product__section">
         <h1 class="product__section__title">amplifiers</h1>
-        <Sort></Sort>
-        <section class="grid__col4">
-        </section>
-        <Sort></Sort>
+        <Sort />
+        <section class="grid__col4"></section>
+        <Sort />
       </section>
       <section class="manufacturer__section">
         <p class="manufacturer__p">Manufacturer</p>
@@ -100,10 +102,8 @@ import { Image } from "astro:assets";
     gap: 1em;
   }
 
-  .product {
-    border: 1px solid black;
-    display: flex;
-    flex-direction: column;
+  .product h4 {
+    height: 10px;
   }
 
   ul {
@@ -116,7 +116,7 @@ import { Image } from "astro:assets";
 
   .grid__con {
     display: grid;
-    grid-template-columns: 1fr 3fr 1fr;;
+    grid-template-columns: 1fr 3fr 1fr;
   }
 
   .width__con {
@@ -147,7 +147,8 @@ import { Image } from "astro:assets";
     gap: 1em;
   }
 
-  .filter__products, .filter__manufacturer {
+  .filter__products,
+  .filter__manufacturer {
     background-color: var(--filter-bg-color);
     padding: 2em;
   }
@@ -171,8 +172,7 @@ import { Image } from "astro:assets";
   }
 
   .manufacturer__section {
-    padding:2em;
-    
+    padding: 2em;
   }
 
   .manufacturer__p {

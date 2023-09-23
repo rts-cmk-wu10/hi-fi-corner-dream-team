@@ -602,7 +602,7 @@
     {
       "id": 31,
       "title": "Jolida JD502B",
-      "price": 2399,
+      "price": "23,000.00",
       "discount": 399,
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores excepturi totam error, deserunt maxime libero quisquam eius sit similique neque et exercitationem voluptates nisi doloremque necessitatibus inventore natus minima quam.",
       "finish": ["black"],

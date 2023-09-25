@@ -1,98 +1,0 @@
-Script started on 2023-09-25 10:33:29+02:00 [TERM="foot" TTY="/dev/pts/1" COLUMNS="52" LINES="34"]
-[1m[7m%[27m[1m[0m                                                    ]2;martin@martin-laptop:~/repos/hifi-corner]1;..s/hifi-corner[0m[27m[24m[J[01;31m[01;32m[01;33m [36m  hifi-corner[00m [01;34m  git:([31mmartin-branch[34m) [33m✗[00m [K[?1h=[?2004hssrc[1m/[0m[0m/
-[01;34massets[0m/      [01;34mlayouts[0m/     [01;34mscripts[0m/                
-[J[01;34mcomponents[0m/  [J[01;34mpages[0m/       [J[01;34mstyles[0m/      [J           [A[A[0m[27m[24m[44Csrc/[Kscripts[1m/[0m[K[0m/
-[J[0mgetData.js             parameterMaker.js    
-[JmakeProductElement.js  [J                     [3A[0m[27m[24m[44Csrc/scripts/[K[10@getData.js[37C  [A[14C
-[7mgetData.js           [0m  parameterMaker.js    [K
-[JmakeProductElement.js  [J                     [3A[0m[27m[24m[44Csrc/scripts/getData.js[K
-[7mgetData.js           [0m  [7mgetData.js           [0m  [A[A[0m[27m[24m[44Csrc/scripts/getData.js[K[10DmakePro[11@ductElement[29C  [A[25C
-[0mgetData.js             [1B[7mmakeProductElement.js[0m[3A[0m[27m[24m[44Csrc/scripts/makeProductElement.js[K[21DparameterMaker[4P[30C[K[27D
-[23C[7mparameterMaker.js    [0m[1BmakeProductElement.js[3A[0m[27m[24m[44Csrc/scripts/parameterMaker.js[K[17DgetData[7P[34C[K[31D
-[7mgetData.js           [0m  [23CparameterMaker.js    [A[A[0m[27m[24m[44Csrc/scripts/getData.js[K[10DmakePro[11@ductElement[29C  [A[25C
-[0mgetData.js             [1B[7mmakeProductElement.js[0m[3A[0m[27m[24m[44Csrc/scripts/makeProductElement.js[K[21DparameterMaker[4P[30C[K[27D
-[23C[7mparameterMaker.js    [0m[1BmakeProductElement.js[3A[0m[27m[24m[44Csrc/scripts/parameterMaker.js[K[17DgetData[7P[34C[K[31D
-[7mgetData.js           [0m  [23CparameterMaker.js    [A[A[0m[27m[24m[44Csrc/scripts/getData.js[K[10DmakePro[11@ductElement[29C  [A[25C
-[0mgetData.js             [1B[7mmakeProductElement.js[0m[3A[0m[27m[24m[44Csrc/scripts/makeProductElement.js[K
-[J[A[25C[1m [0m[0m                      [?1l>[?2004l
-[J]2;src/scripts/]1;src/scripts/[1m[7m%[27m[1m[0m                                                    ]2;martin@martin-laptop:~/repos/hifi-corner/src/scripts]1;..r/src/scripts[0m[27m[24m[J[01;31m[01;32m[01;33m [36m  scripts[00m [01;34m  git:([31mmartin-branch[34m) [33m✗[00m [K[?1h=[?2004hnnode parameterMaker.js[1m [0m[K[K[?1l>[?2004l
-]2;node parameterMaker.js]1;nodefile:///home/martin/repos/hifi-corner/src/scripts/parameterMaker.js:2
-  const params = new URLSearchParams(window.location.search)
-                                     ^
-
-ReferenceError: window is not defined
-    at parameterMaker [90m(file:///home/martin/repos/hifi-corner/src/scripts/[39mparameterMaker.js:2:38[90m)[39m
-    at [90mfile:///home/martin/repos/hifi-corner/src/scripts/[39mparameterMaker.js:7:1
-[90m    at ModuleJob.run (node:internal/modules/esm/module_job:217:25)[39m
-[90m    at async ModuleLoader.import (node:internal/modules/esm/loader:308:24)[39m
-[90m    at async loadESM (node:internal/process/esm_loader:42:7)[39m
-[90m    at async handleMainPromise (node:internal/modules/run_main:66:12)[39m
-
-Node.js v20.6.1
-[1m[7m%[27m[1m[0m                                                    ]2;martin@martin-laptop:~/repos/hifi-corner/src/scripts]1;..r/src/scripts[0m[27m[24m[J[01;31m [36m  scripts[00m [01;34m  git:([31mmartin-branch[34m) [33m✗[00m [K[?1h=[?2004hnode parameterMaker.js[K[?1l>[?2004l
-]2;node parameterMaker.js]1;nodeURLSearchParams { [32m'http://localhost:4321/shop-category-list/'[39m => [32m''[39m, [32m'q'[39m => [32m'creek'[39m }
-[1m[7m%[27m[1m[0m                                                    ]2;martin@martin-laptop:~/repos/hifi-corner/src/scripts]1;..r/src/scripts[0m[27m[24m[J[01;31m[01;32m[01;33m [36m  scripts[00m [01;34m  git:([31mmartin-branch[34m) [33m✗[00m [K[?1h=[?2004hnode parameterMaker.js[K[?1l>[?2004l
-]2;node parameterMaker.js]1;nodehttp%3A%2F%2Flocalhost%3A4321%2Fshop-category-list%2F=&q=creek
-[1m[7m%[27m[1m[0m                                                    ]2;martin@martin-laptop:~/repos/hifi-corner/src/scripts]1;..r/src/scripts[0m[27m[24m[J[01;31m[01;32m[01;33m [36m  scripts[00m [01;34m  git:([31mmartin-branch[34m) [33m✗[00m [K[?1h=[?2004hnode parameterMaker.js[K[?1l>[?2004l
-]2;node parameterMaker.js]1;nodehttp%3A%2F%2Flocalhost%3A4321%2Fshop-category-list%2F=&q=creek
-[1m[7m%[27m[1m[0m                                                    ]2;martin@martin-laptop:~/repos/hifi-corner/src/scripts]1;..r/src/scripts[0m[27m[24m[J[01;31m[01;32m[01;33m [36m  scripts[00m [01;34m  git:([31mmartin-branch[34m) [33m✗[00m [K[?1h=[?2004hnode parameterMaker.js[K[?1l>[?2004l
-]2;node parameterMaker.js]1;nodemode=night&page=2&q=creek
-[1m[7m%[27m[1m[0m                                                    ]2;martin@martin-laptop:~/repos/hifi-corner/src/scripts]1;..r/src/scripts[0m[27m[24m[J[01;31m[01;32m[01;33m [36m  scripts[00m [01;34m  git:([31mmartin-branch[34m) [33m✗[00m [K[?1h=[?2004hnnpm run dev[?1l>[?2004l
-]2;npm run dev]1;npm
-> hifi-corner@0.0.1 dev
-> astro dev
-
-[0m[0m  🚀 [42m[30m astro [39m[49m [32mv3.1.0[39m [2mstarted in 86ms[22m
-  
-  [2m┃[22m Local    [1m[36mhttp://localhost:4321/[39m[22m
-  [2m┃[22m Network  [2muse --host to expose[22m
-  
-[0m[2m10.41.48 [22m[1m[36m[astro][39m[22m [0m[32mupdate[39m /src/pages/shop-category-list.astro
-[0m[2m10.43.53 [22m[1m[36m[astro][39m[22m [0m[32mupdate[39m /src/scripts/parameterMaker.js
-[0m[2m10.44.04 [22m[1m[36m[astro][39m[22m [0m[32mupdate[39m /src/pages/shop-category-list.astro
-[0m[2m10.44.12 [22m[1m[36m[serve][39m[22m [0m[1m[33m   404[39m[22m                             /favicon.ico
-[0m[2m10.44.16 [22m[1m[36m[serve][39m[22m [0m[1m[33m   404[39m[22m              /shop-category-list/q=creek
-[0m[2m10.44.19 [22m[1m[36m[serve][39m[22m [0m[1m[33m   404[39m[22m                             /favicon.ico
-[0m[2m10.44.49 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/scripts/parameterMaker.js
-[0m[2m10.44.50 [22m[1m[36m[serve][39m[22m [0m[1m[33m   404[39m[22m              /shop-category-list/q=creek
-[0m[2m10.44.54 [22m[1m[36m[serve][39m[22m [0m[1m[33m   404[39m[22m                             /favicon.ico
-[0m[2m10.44.56 [22m[1m[36m[serve][39m[22m [0m[1m[33m   404[39m[22m              /shop-category-list/q=creek
-[0m[2m10.45.19 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/scripts/parameterMaker.js
-[0m[2m10.45.20 [22m[1m[36m[serve][39m[22m [0m[1m[33m   404[39m[22m              /shop-category-list/q=creek
-[0m[2m10.45.23 [22m[1m[36m[serve][39m[22m [0m[1m[33m   404[39m[22m                             /favicon.ico
-[2K[1G[1A[2K[1G[1A[0m[2m10.45.26 [22m[1m[36m[serve][39m[22m [0m[1m[33m   404[39m[22m                             /favicon.ico [33m(x2)[39m
-[0m[2m10.50.27 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/scripts/parameterMaker.js
-[2K[1G[1A[2K[1G[1A[0m[2m10.50.48 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/scripts/parameterMaker.js [33m(x2)[39m
-[2K[1G[1A[2K[1G[1A[0m[2m10.51.42 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/scripts/parameterMaker.js [33m(x3)[39m
-[2K[1G[1A[2K[1G[1A[0m[2m10.51.43 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/scripts/parameterMaker.js [33m(x4)[39m
-[2K[1G[1A[2K[1G[1A[0m[2m10.51.44 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/scripts/parameterMaker.js [33m(x5)[39m
-[0m[2m10.51.44 [22m[1m[36m[astro][39m[22m [0m[32mupdate[39m /typescript
-[0m[2m10.51.53 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro
-[2K[1G[1A[2K[1G[1A[0m[2m10.53.43 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x2)[39m
-[2K[1G[1A[2K[1G[1A[0m[2m10.55.25 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x3)[39m
-[2K[1G[1A[2K[1G[1A[0m[2m11.02.07 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x4)[39m
-[0m[2m11.02.09 [22m[1m[36m[serve][39m[22m [0m[1m[33m   404[39m[22m                             /favicon.ico
-[0m[2m11.03.32 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro
-[2K[1G[1A[2K[1G[1A[0m[2m11.04.11 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x2)[39m
-[2K[1G[1A[2K[1G[1A[0m[2m11.05.00 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x3)[39m
-[2K[1G[1A[2K[1G[1A[0m[2m11.05.35 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x4)[39m
-[2K[1G[1A[2K[1G[1A[0m[2m11.06.22 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x5)[39m
-[2K[1G[1A[2K[1G[1A[0m[2m11.07.43 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x6)[39m
-[2K[1G[1A[2K[1G[1A[0m[2m11.07.58 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x7)[39m
-[2K[1G[1A[2K[1G[1A[0m[2m11.08.11 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x8)[39m
-[2K[1G[1A[2K[1G[1A[0m[2m11.08.47 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x9)[39m
-[2K[1G[1A[2K[1G[1A[0m[2m11.08.49 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x10)[39m
-[2K[1G[1A[2K[1G[1A[0m[2m11.09.23 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x11)[39m
-[2K[1G[1A[2K[1G[1A[0m[2m11.09.36 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x12)[39m
-[2K[1G[1A[2K[1G[1A[0m[2m11.09.42 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x13)[39m
-[2K[1G[1A[2K[1G[1A[0m[2m11.13.24 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x14)[39m
-[0m[2m11.13.26 [22m[1m[36m[astro][39m[22m [0m[32mupdate[39m /src/scripts/productSorting.js
-[0m[2m11.13.34 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro
-[0m[2m11.14.33 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/scripts/parameterMaker.js
-[0m[2m11.25.04 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro
-[2K[1G[1A[2K[1G[1A[0m[2m11.25.08 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x2)[39m
-[2K[1G[1A[2K[1G[1A[0m[2m11.25.35 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x3)[39m
-[2K[1G[1A[2K[1G[1A[0m[2m11.26.58 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x4)[39m
-[2K[1G[1A[2K[1G[1A[0m[2m11.27.36 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x5)[39m
-[2K[1G[1A[2K[1G[1A[0m[2m11.30.11 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x6)[39m
-[2K[1G[1A[2K[1G[1A[0m[2m11.30.38 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m

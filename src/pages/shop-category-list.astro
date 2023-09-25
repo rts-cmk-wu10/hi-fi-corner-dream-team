@@ -15,6 +15,7 @@ import '../styles/product.css';
   const ulManu = document.querySelectorAll('.ul__manufacturer li')
   const numberP = document.querySelector('.sort__by__number__items');
   const productGrid = document.querySelector('.grid__col4');
+  const urlPara = new URLSearchParams(window.location.search)
 
   function makeElements(data) {
     productGrid.innerHTML = ''
@@ -41,8 +42,17 @@ import '../styles/product.css';
   })
 
   window.onload = async () => {
-    const creekLength = await getDataFromApi(`products/?q=creek`)
-    document.querySelector('.product__count__creek').textContent = creekLength.length
+    const stringsToLoop = [
+      'products/?q=creek', 'products/?q=exposure', 
+      'products/?q=parasound', 'products/?q=manley',
+      'products/?q=project', 'products/?q=boesendorfer', 
+      'products/?q=epos', 'products/?q=harbeth', 'products/?q=jolida'
+    ]
+
+    stringsToLoop.forEach(async element => {
+      const dataLength = await getDataFromApi(element)
+      document.querySelector(`.product__count__${element.slice(12)}`).textContent = dataLength.length
+    })
   }
 </script>
 
@@ -88,15 +98,15 @@ import '../styles/product.css';
           </ul>
           <h3 class="p--black p--upper">manufacturer</h3>
           <ul class="ul__manufacturer">
-            <li data-manufacturer="creek">Creek (<span class="product__count__creek"></span>)</li>
-            <li data-manufacturer="exposure">Exposure (<span class="product__count__exposure"></span>)</li>
-            <li data-manufacturer="parasound">Parasound (<span class="product__count__parasound"></span>)</li>
-            <li data-manufacturer="manley">Manley (<span class="product__count__manley"></span>)</li>
-            <li data-manufacturer="project">Project (<span class="product__count__project"></span>)</li>
-            <li data-manufacturer="boesendorfer">Boesendorfer (<span class="product__count__boesendorfer"></span>)</li>
-            <li data-manufacturer="epos">Epos (<span class="product__count__epos"></span>)</li>
-            <li data-manufacturer="harbeth">Harbeth (<span class="product__count__herbeth"></span>)</li>
-            <li data-manufacturer="jolida">Jolida (<span class="product__count__jolida"></span>)</li>
+            <li data-manufacturer="creek">Creek (<span data-manufacturer="creek" class="product__count__creek"></span>)</li>
+            <li data-manufacturer="exposure">Exposure (<span data-manufacturer="exposure" class="product__count__exposure"></span>)</li>
+            <li data-manufacturer="parasound">Parasound (<span data-manufacturer="parasound" class="product__count__parasound"></span>)</li>
+            <li data-manufacturer="manley">Manley (<span data-manufacturer="manley" class="product__count__manley"></span>)</li>
+            <li data-manufacturer="project">Project (<span data-manufacturer="project" class="product__count__project"></span>)</li>
+            <li data-manufacturer="boesendorfer">Boesendorfer (<span data-manufacturer="boesendorfer" class="product__count__boesendorfer"></span>)</li>
+            <li data-manufacturer="epos">Epos (<span data-manufacturer="epos" class="product__count__epos"></span>)</li>
+            <li data-manufacturer="harbeth">Harbeth (<span data-manufacturer="harbeth" class="product__count__harbeth"></span>)</li>
+            <li data-manufacturer="jolida">Jolida (<span data-manufacturer="jolida" class="product__count__jolida"></span>)</li>
           </ul>
         </div>
       </section>

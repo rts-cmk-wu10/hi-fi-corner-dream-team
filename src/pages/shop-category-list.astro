@@ -3,23 +3,21 @@ import StartLayout from '../layouts/StartLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import '../styles/global.css';
 import Sort from '../components/Sort.astro';
-import { Image } from 'astro:assets';
-import '../styles/product.css'
+import '../styles/product.css';
 ---
 
 <script>
   import getDataFromApi from '../scripts/getData';
   import { makeProductElement } from '../scripts/makeProductElement';
+  import parameterMaker from '../scripts/parameterMaker'
 
-  // Get URL params for search
-  const urlParams = new URLSearchParams(window.location.search)
-  urlParams.set('q', 'creek')
-  
-
-  const numberP = document.querySelector('.sort__by__number__items')
+  const ulManu = document.querySelectorAll('.ul__manufacturer li')
+  const numberP = document.querySelector('.sort__by__number__items');
   const productGrid = document.querySelector('.grid__col4');
-  const data = await getDataFromApi('products');
-  data.forEach((product) => {
+
+  function makeElements(data) {
+    productGrid.innerHTML = ''
+    data.forEach((product) => {
     const newProduct = makeProductElement(
       product.pictures[0],
       product.title,
@@ -28,8 +26,18 @@ import '../styles/product.css'
     );
     productGrid.appendChild(newProduct);
   });
-  // Puts a number on how many products on search list
-  numberP.innerHTML = `${data.length} item(s)`
+  }
+
+  ulManu.forEach(ul => {
+    ul.addEventListener('click', async (e) => {
+      // Error but it does work
+      parameterMaker('search', 'q', e.target.dataset.manufacturer)
+      const data = await getDataFromApi(`products/${window.location.search}`);
+      makeElements(data)
+      // Puts a number on how many products on search list
+      numberP.innerHTML = `${data.length} item(s)`;
+    })
+  })
 </script>
 
 <StartLayout title="Search products - HIFI-corner">
@@ -73,16 +81,16 @@ import '../styles/product.css'
             <li>£12,000.00 and above(<span class="product__count__12000"></span>)</li>
           </ul>
           <h3 class="p--black p--upper">manufacturer</h3>
-          <ul>
-            <li>Creek (<span class="product__count__creek"></span>)</li>
-            <li>Exposure (<span class="product__count__exposure"></span>)</li>
-            <li>Parasound (<span class="product__count__parasound"></span>)</li>
-            <li>Manley (<span class="product__count__manley"></span>)</li>
-            <li>Project (<span class="product__count__project"></span>)</li>
-            <li>Boesendorfer (<span class="product__count__boesendorfer"></span>)</li>
-            <li>Epos (<span class="product__count__epos"></span>)</li>
-            <li>Harbeth (<span class="product__count__herbeth"></span>)</li>
-            <li>Jolida (<span class="product__count__jolida"></span>)</li>
+          <ul class="ul__manufacturer">
+            <li data-manufacturer="creek">Creek (<span class="product__count__creek"></span>)</li>
+            <li data-manufacturer="exposure">Exposure (<span class="product__count__exposure"></span>)</li>
+            <li data-manufacturer="parasound">Parasound (<span class="product__count__parasound"></span>)</li>
+            <li data-manufacturer="manley">Manley (<span class="product__count__manley"></span>)</li>
+            <li data-manufacturer="project">Project (<span class="product__count__project"></span>)</li>
+            <li data-manufacturer="boesendorfer">Boesendorfer (<span class="product__count__boesendorfer"></span>)</li>
+            <li data-manufacturer="epos">Epos (<span class="product__count__epos"></span>)</li>
+            <li data-manufacturer="harbeth">Harbeth (<span class="product__count__herbeth"></span>)</li>
+            <li data-manufacturer="jolida">Jolida (<span class="product__count__jolida"></span>)</li>
           </ul>
         </div>
       </section>

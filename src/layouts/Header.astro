@@ -5,9 +5,9 @@ import hifiLogo from "../assets/header/hifi_logo.jpg";
 ---
 
 <script>
-    const getURL = window.location.href
-    if(!getURL.includes('shop')) {
-        document.querySelector('header').style.position = 'absolute'
+    const getURL = window.location.href;
+    if (!getURL.includes("shop")) {
+        document.querySelector("header").style.position = "absolute";
     }
 </script>
 
@@ -30,13 +30,25 @@ import hifiLogo from "../assets/header/hifi_logo.jpg";
             >
         </form>
         <ul>
-            <li><a href=""><i class="fa-solid fa-user"></i>ACCOUNT</a></li>
             <li>
-                <a href=""><i class="fa-solid fa-cart-shopping"></i>CART</a>
+                <a class="linkGrid" href=""
+                    ><i class="fa-solid fa-user"></i>ACCOUNT</a
+                >
             </li>
-            <li><a href=""><i class="fa-solid fa-location-dot"></i></a></li>
-            <li><a href=""><i class="fa-solid fa-phone"></i></a></li>
-            <li><a href=""><i class="fa-regular fa-envelope"></i></a></li>
+            <li>
+                <a class="linkGrid" href=""
+                    ><i class="fa-solid fa-cart-shopping"></i>CART</a
+                >
+            </li>
+            <li class="smallLi">
+                <a href=""><i class="fa-solid fa-location-dot"></i></a>
+            </li>
+            <li class="smallLi">
+                <a href=""><i class="fa-solid fa-phone"></i></a>
+            </li>
+            <li class="smallLi">
+                <a href=""><i class="fa-regular fa-envelope"></i></a>
+            </li>
         </ul>
     </div>
 
@@ -48,14 +60,12 @@ import hifiLogo from "../assets/header/hifi_logo.jpg";
             <li><a href="">BLOG</a></li>
             <li><a href="">EVENTS</a></li>
             <li><a href="/shop-category/">SHOP</a></li>
-            <li><a href="/product">CONTACT US</a></li>
+            <li><a href="/shop-product/">CONTACT US</a></li>
         </ul>
     </nav>
 </header>
 
 <style>
-    /* --- Header --- */
-
     body {
         margin: 0;
     }
@@ -71,9 +81,12 @@ import hifiLogo from "../assets/header/hifi_logo.jpg";
         border-top: 1px solid gray;
     }
 
+    nav a {
+        font-size: 12px;
+    }
+
     a {
         color: white;
-        font-size: 12px;
         text-decoration: none;
         font-family: "Museo sans rounded webfont";
     }
@@ -92,8 +105,6 @@ import hifiLogo from "../assets/header/hifi_logo.jpg";
     h1 {
         color: white;
     }
-
-    /* --- UpperNav ---*/
 
     .upperNav {
         background-color: rgba(0, 0, 0, 0.507);
@@ -122,18 +133,25 @@ import hifiLogo from "../assets/header/hifi_logo.jpg";
     .upperNav li {
         list-style: none;
         align-self: center;
-        transition: transform 0.2s;
+    }
+
+    .smallLi {
+        width: 15px;
+        font-size: 20px;
     }
 
     .upperNav li:hover {
         transform: scale(1.25);
     }
 
-    .upperNav a {
-        font-size: 15px;
-        display: grid;
+    .upperNav li {
         column-gap: 5px;
+        transition: transform 0.2s;
+    }
+
+    .linkGrid {
         grid-template-columns: repeat(2, auto);
+        display: grid;
     }
 
     .homeButton {
@@ -146,6 +164,7 @@ import hifiLogo from "../assets/header/hifi_logo.jpg";
         background-color: white;
         cursor: pointer;
         height: 30px;
+        padding: 0 1em;
     }
 
     .upperNav_searchInput {
@@ -153,6 +172,7 @@ import hifiLogo from "../assets/header/hifi_logo.jpg";
         border: none;
         outline: none;
         height: 30px;
+        padding-left: 1em;
     }
 
     .upperNav_logo {

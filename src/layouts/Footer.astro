@@ -1,5 +1,10 @@
 ---
 import "../styles/global.css";
+import { Image } from "astro:assets";
+import youtube from "../assets/footer/play.png";
+import facebook from "../assets/footer/facebook.png";
+import twitter from "../assets/footer/twitter.png";
+import linkedin from "../assets/footer/linkedin.png";
 ---
 
 <footer>
@@ -15,12 +20,27 @@ import "../styles/global.css";
         </div>
 
         <div class="footerDiv3">
-            <p><i class="fa-solid fa-globe"></i>Worldpay</p>
-            <p><i class="fa-brands fa-cc-visa"></i></p>
-            <p><i class="fa-brands fa-cc-mastercard"></i></p>
-            <p><i class="fa-brands fa-cc-mastercard"></i></p>
-            <p><i class="fa-brands fa-cc-jcb"></i></p>
-            <p><i class="fa-brands fa-paypal"></i>PayPal</p>
+            <p>Worldpay</p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p>PayPal</p>
+        </div>
+
+        <div class="footerDiv4">
+            <p>
+                <Image class="" src={youtube} alt="" format="webp" />
+            </p>
+            <p>
+                <Image class="" src={facebook} alt="" format="webp" />
+            </p>
+            <p>
+                <Image class="" src={twitter} alt="" format="webp" />
+            </p>
+            <p>
+                <Image class="" src={linkedin} alt="" format="webp" />
+            </p>
         </div>
     </div>
 </footer>
@@ -42,7 +62,7 @@ import "../styles/global.css";
     .footerContainer {
         padding: 1em 2em;
         display: grid;
-        grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 3fr 2fr 1fr;
     }
 
     .footerDiv1 {

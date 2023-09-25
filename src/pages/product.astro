@@ -21,7 +21,7 @@ import paypal from "../assets/product_site/paypal.png";
                     src="https://via.placeholder.com/400x300"
                     alt=""
                 />
-                <p>More Views</p>
+                <span>MORE VIEWS</span>
                 <div class="moreImgsBox">
                     <img src="https://via.placeholder.com/50x50" alt="" />
                     <img src="https://via.placeholder.com/50x50" alt="" />
@@ -99,7 +99,7 @@ import paypal from "../assets/product_site/paypal.png";
                         </form>
                         <br />
                         <p class="or">-OR-</p>
-                        <div class="paypalCheckout">
+                        <a class="paypalCheckout" href="">
                             <Image
                                 class="paypalIcon"
                                 src={paypal}
@@ -107,289 +107,402 @@ import paypal from "../assets/product_site/paypal.png";
                                 format="webp"
                             />
                             <p class="checkOut">Check Out</p>
-                        </div>
+                        </a>
                         <p class="paypalUnderText">
                             The safer, easier way to pay
                         </p>
                         <span class="line"></span>
                     </div>
-                </div>
 
-                <div class="infoBox">
-                    <p class="infoTitle">ADDITIONAL INFORMATION</p>
-                    <div class="infoItemsBox">
-                        <p class="infoName">MANUFACTURER</p>
-                        <p class="infoValue">Marantz</p>
+                    <div class="infoBox">
+                        <p class="infoTitle">ADDITIONAL INFORMATION</p>
+                        <div class="infoItemsBox">
+                            <p class="infoName">MANUFACTURER</p>
+                            <p class="infoValue">Marantz</p>
 
-                        <p class="infoName">MANUFACTURER LINK</p>
-                        <span class="infoValueSpan">Marantz PM6006</span>
+                            <p class="infoName">MANUFACTURER LINK</p>
+                            <span class="infoValueSpan">Marantz PM6006</span>
 
-                        <p class="infoName">FREE WARRANTY</p>
-                        <p class="infoValue">3 years</p>
+                            <p class="infoName">FREE WARRANTY</p>
+                            <p class="infoValue">3 years</p>
 
-                        <p class="infoName">DELIVERY CHARGE</p>
-                        <p class="infoValue">Free</p>
+                            <p class="infoName">DELIVERY CHARGE</p>
+                            <p class="infoValue">Free</p>
 
-                        <p class="infoName">DELIVERY TIME</p>
-                        <p class="infoValue">1 - 5 Working Days</p>
+                            <p class="infoName">DELIVERY TIME</p>
+                            <p class="infoValue">1 - 5 Working Days</p>
 
-                        <p class="infoName">CARD SURCHARGES</p>
-                        <p class="infoValue">No</p>
+                            <p class="infoName">CARD SURCHARGES</p>
+                            <p class="infoValue">No</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <section class="descriptionSection">
+            <p class="descriptionTitle">DESCRIPTION</p>
+            <div class="descriptionBox">
+                <div class="descriptionBox1">
+                    <p>Power Output (8/ 4 Ohm RMS)</p>
+                    <br />
+                    <p>Frequency Respone</p>
+                    <br />
+                    <div>
+                        <p>Total Harmonic Distortion</p>
+                        <p>Damping Factor</p>
+                        <p>Input Sensitivity: MM</p>
+                        <p>Input Sensitivity: MC</p>
+                    </div>
+                    <br />
+                    <p>Signal to Noise Ratio: MM / MC</p>
+                    <br />
+                    <div>
+                        <p>Input Sensitivity: High level</p>
+                        <p>Input Sensitivity: Balanced High level</p>
+                        <p>Signal to Noise Ratio: High level</p>
+                        <p>Input Sensitivity: Power Amp Direct IN</p>
+                    </div>
+                    <br />
+                    <p>Signal to Noise Ratio: Power Amp Direct IN</p>
+                </div>
+
+                <div class="descriptionBox2">
+                    <p>45 W / 60 W</p>
+                    <p>10 Hz</p>
+                    <p><i class="fa-solid fa-x"></i></p>
+                    <p>70 kHz</p>
+                    <p>0.08%</p>
+                    <p>100</p>
+                    <p>2.2mV / 47 kOhm</p>
+                    <p><i class="fa-solid fa-x"></i></p>
+                    <p>83 dB /</p>
+                    <p><i class="fa-solid fa-x"></i></p>
+                    <p>200mV / 20 kOhm</p>
+                    <p><i class="fa-solid fa-x"></i></p>
+                    <p>102dB(2V input)</p>
+                    <p><i class="fa-solid fa-x"></i></p>
+                    <p><i class="fa-solid fa-x"></i></p>
+                </div>
+            </div>
+            <div class="customerSupport">
+                <a href=""
+                    ><i class="fa-solid fa-phone"></i> CALL US ABOUT THIS
+                    PRODUCT</a
+                >
+            </div>
+        </section>
     </div>
+
+    <style>
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Firefox */
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+        p,
+        a,
+        span {
+            font-family: "Museo sans rounded webfont";
+            color: #b19b61;
+        }
+
+        #wrapper {
+            max-width: 1100px;
+            margin: auto;
+            background-color: white;
+            padding: 0em 4em;
+        }
+
+        .moreImgsBox {
+            display: grid;
+            padding-top: 1em;
+            grid-template-columns: repeat(2, 50px);
+            column-gap: 2em;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .bannerBox img {
+            margin: auto;
+            display: block;
+        }
+
+        .bannerBox {
+            padding-bottom: 1.5em;
+        }
+
+        .bannerBox img {
+            max-width: 972px;
+        }
+
+        .productSection {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .productBox1 {
+            height: 800px;
+            max-width: 400px;
+        }
+
+        .productBox1 span {
+            font-weight: 800;
+        }
+
+        .productImgBig {
+            border: 1px gray solid;
+        }
+
+        .productName {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .productPriceBox {
+            display: grid;
+            grid-template-columns: 4fr 50px 130px;
+            padding-top: 1em;
+            align-items: center;
+        }
+
+        .productPriceBefore {
+            text-decoration: line-through;
+            text-align: end;
+            color: rgb(169, 169, 169);
+        }
+
+        .productPriceCurrent {
+            text-align: end;
+            font-size: 25px;
+        }
+
+        .productOptions {
+            font-weight: 700;
+        }
+
+        .productText {
+            padding-top: 3em;
+            color: black;
+        }
+
+        .productFaqBox {
+            display: grid;
+            grid-template-columns: repeat(4, auto);
+            padding-top: 3em;
+        }
+
+        .productFaqBox a {
+            background-color: #b19b61;
+            color: white;
+            max-width: 110px;
+            font-size: 9px;
+            text-decoration: none;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        .productFaqBox a:hover {
+            color: black;
+        }
+
+        .checkoutBox {
+            margin-top: 2em;
+        }
+
+        .formColorBox {
+            height: 120px;
+            border: solid 1px grey;
+            border-bottom: 1px grey solid;
+            padding: 0.5em 1em 0em 1em;
+            display: grid;
+            grid-template-rows: repeat(2, auto);
+            grid-template-columns: repeat(2, auto);
+        }
+
+        .colorLabelBox {
+            background-color: rgb(200, 200, 200);
+            padding: 0.25em 8em 0.25em 1em;
+        }
+
+        .colorLabelBox label {
+            padding-left: 1em;
+        }
+
+        .formColorBoxText2 {
+            text-align: end;
+            color: red;
+        }
+
+        .formCheckOutBox {
+            width: 100%;
+            height: 250px;
+            background-color: rgb(200, 200, 200);
+            border: solid 1px grey;
+            padding: 1em 1em 0em 1em;
+            border-top: 0px;
+        }
+
+        .or {
+            margin-left: 9em;
+        }
+
+        .productCount {
+            color: #b19b61;
+            font-weight: 700;
+            padding-right: 0.5em;
+        }
+
+        #quantity {
+            padding: 1em 0;
+            text-align: center;
+            max-width: 46px;
+        }
+
+        .addToCart {
+            background-color: #b19b61;
+            outline: none;
+            border: none;
+            color: white;
+            padding: 1em 2em;
+            margin-left: 0.5em;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        .addToCart:hover {
+            color: black;
+        }
+
+        .paypalIcon {
+            max-width: 50px;
+            max-height: 50px;
+        }
+
+        .paypalCheckout {
+            display: grid;
+            grid-template-columns: 50px 70px;
+            background-color: orange;
+            width: 130px;
+            border-radius: 5em;
+            margin-left: 6em;
+            margin-top: 1em;
+            cursor: pointer;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .paypalUnderText {
+            color: black;
+            font-size: 8px;
+            padding-top: 5px;
+            margin-left: 14em;
+        }
+
+        .line {
+            width: 95%;
+            padding-top: 2em;
+            display: block;
+            border-bottom: 1px solid grey;
+        }
+
+        .checkOut {
+            font-size: 12px;
+            color: black;
+            width: 70px;
+            text-align: center;
+            align-self: center;
+        }
+
+        .infoItemsBox {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            grid-template-rows: repeat(7, auto);
+        }
+
+        .infoName {
+            grid-column: 1;
+            color: black;
+            font-size: 10px;
+            background-color: rgb(221, 221, 221);
+            border: 1px solid grey;
+            text-align: start;
+            padding: 1em 2em;
+            font-weight: 700;
+        }
+
+        .infoValue {
+            grid-column: 2;
+            color: black;
+            font-size: 11px;
+            border: 1px solid grey;
+            padding: 1em 2em;
+        }
+
+        .infoBox {
+            padding-top: 2em;
+        }
+
+        .infoTitle {
+            padding-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .infoValueSpan {
+            color: #b19b61;
+            grid-column: 2;
+            font-size: 11px;
+            border: 1px solid grey;
+            padding: 1em 2em;
+        }
+
+        .descriptionSection {
+            padding: 1em 0 2em 0;
+        }
+
+        .customerSupport {
+            background-color: black;
+            display: grid;
+            justify-content: center;
+            padding: 5px;
+        }
+
+        .customerSupport a {
+            text-decoration: none;
+        }
+
+        .customerSupport a:hover {
+            color:white;
+        }
+
+        .descriptionBox p {
+            color: black;
+            font-size: 12px;
+        }
+
+        .descriptionBox {
+            max-width: 600px;
+            line-height: 1.6;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding-bottom:1em;
+        }
+
+        .descriptionTitle {
+            font-weight: 700;
+            padding-bottom: 1em;
+        }
+
+        .descriptionBox2  {
+            line-height: 2;
+        }
+    </style>
 </StartLayout>
-
-<style>
-    p,
-    a {
-        font-family: "Museo sans rounded webfont";
-        color: #b19b61;
-    }
-
-    #wrapper {
-        max-width: 1100px;
-        margin: auto;
-        background-color: white;
-        padding: 0em 4em;
-    }
-
-    .moreImgsBox {
-        display: grid;
-        padding-top: 1em;
-        grid-template-columns: repeat(2, 50px);
-        column-gap: 2em;
-    }
-
-    body {
-        background-color: black;
-    }
-
-    .bannerBox img {
-        margin: auto;
-        display: block;
-    }
-
-    .bannerBox {
-        padding-bottom: 1.5em;
-    }
-
-    .bannerBox img {
-        max-width: 972px;
-    }
-
-    .productSection {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .productBox1 {
-        height: 800px;
-        max-width: 400px;
-    }
-
-    .productImgBig {
-        border: 1px gray solid;
-    }
-
-    .productName {
-        font-size: 18px;
-        font-weight: 700;
-    }
-
-    .productPriceBox {
-        display: grid;
-        grid-template-columns: 4fr 50px 130px;
-        padding-top: 1em;
-        align-items: center;
-    }
-
-    .productPriceBefore {
-        text-decoration: line-through;
-        text-align: end;
-        color: rgb(169, 169, 169);
-    }
-
-    .productPriceCurrent {
-        text-align: end;
-        font-size: 25px;
-    }
-
-    .productOptions {
-        font-weight: 700;
-    }
-
-    .productText {
-        padding-top: 3em;
-        color: black;
-    }
-
-    .productFaqBox {
-        display: grid;
-        grid-template-columns: repeat(4, auto);
-        padding-top: 3em;
-    }
-
-    .productFaqBox a {
-        background-color: #b19b61;
-        color: white;
-        max-width: 110px;
-        font-size: 9px;
-        text-decoration: none;
-        text-align: center;
-        padding: 1em 0;
-    }
-
-    .productFaqBox a:hover {
-        color: black;
-    }
-
-    .checkoutBox {
-        border: solid 1px grey;
-        margin-top: 2em;
-    }
-
-    .formColorBox {
-        height: 120px;
-        border-bottom: 1px grey solid;
-        padding: 0.5em 1em 0em 1em;
-        display: grid;
-        grid-template-rows: repeat(2, auto);
-        grid-template-columns: repeat(2, auto);
-    }
-
-    .colorLabelBox {
-        background-color: rgb(200, 200, 200);
-        padding: 0.25em 8em 0.25em 1em;
-    }
-
-    .colorLabelBox label {
-        padding-left: 1em;
-    }
-
-    .formColorBoxText2 {
-        text-align: end;
-        color: red;
-    }
-
-    .formCheckOutBox {
-        width: 100%;
-        height: 250px;
-        background-color: rgb(200, 200, 200);
-        border-bottom: 1px grey solid;
-        padding: 1em 1em 0em 1em;
-    }
-
-    .or {
-        margin-left: 9em;
-    }
-
-    .productCount {
-        color: #b19b61;
-        font-weight: 700;
-        padding-right: 0.5em;
-    }
-
-    #quantity {
-        padding: 1em 0;
-        text-align: center;
-    }
-
-    .addToCart {
-        background-color: #b19b61;
-        outline: none;
-        border: none;
-        color: white;
-        padding: 1em 2em;
-        margin-left: 0.5em;
-        cursor: pointer;
-        font-weight: 700;
-    }
-
-    .addToCart:hover {
-        color: black;
-    }
-
-    .paypalIcon {
-        max-width: 50px;
-        max-height: 50px;
-    }
-
-    .paypalCheckout {
-        display: grid;
-        grid-template-columns: 50px 70px;
-        background-color: orange;
-        width: 130px;
-        border-radius: 5em;
-        margin-left: 6em;
-        margin-top: 1em;
-        cursor: pointer;
-        justify-content: center;
-    }
-
-    .paypalUnderText {
-        color: black;
-        font-size: 8px;
-        padding-top: 5px;
-        margin-left: 14em;
-    }
-
-    .line {
-        width: 95%;
-        padding-top: 2em;
-        display: block;
-        border-bottom: 1px solid grey;
-    }
-
-    .checkOut {
-        font-size: 12px;
-        color: black;
-        width: 70px;
-        text-align: center;
-        align-self: center;
-    }
-
-    .infoItemsBox {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        grid-template-rows: repeat(7, auto);
-        border: 1px solid grey;
-    }
-
-    .infoName {
-        grid-column: 1;
-        color: black;
-        font-size: 10px;
-        background-color: rgb(221, 221, 221);
-        border: 1px solid grey;
-        text-align: start;
-        padding: 1em 2em;
-        font-weight: 700;
-    }
-
-    .infoValue {
-        grid-column: 2;
-        color: black;
-        font-size: 11px;
-        border: 1px solid grey;
-        padding: 1em 2em;
-    }
-
-    .infoBox {
-        padding-top: 2em;
-    }
-
-    .infoTitle {
-        padding-bottom: 10px;
-    }
-
-    .infoValueSpan {
-        color: #b19b61;
-        grid-column: 2;
-        font-size: 11px;
-        border: 1px solid grey;
-        padding: 1em 2em;
-    }
-</style>

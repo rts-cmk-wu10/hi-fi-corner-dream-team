@@ -1,34 +1,34 @@
-export default function parameterMaker(method ,param, value) {
-  let url= new URL(window.location.href)
-  let params = new URLSearchParams(url.search)
+export default function parameterMaker (method, param, value) {
+  const url = new URL(window.location.href)
+  const params = new URLSearchParams(url.search)
   params.set(param, value)
-  
+
   switch (method) {
     case 'filter':
 
-      break;
+      break
 
-    case 'search': 
-    
+    case 'search':
+
       history.pushState(null, null, '?' + params.toString())
       break
 
-    case 'paginate': 
-    
-      break
-      
-    case 'sort': 
-    
+    case 'paginate':
+
       break
 
-    case 'slice': 
-    
+    case 'sort':
+
       break
 
-    case 'relation': 
-    
+    case 'slice':
+
+      break
+
+    case 'relation':
+
       break
     default:
-      break;
+      break
   }
 }

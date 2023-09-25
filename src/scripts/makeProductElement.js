@@ -1,8 +1,8 @@
-export function makeProductElement(image ,title, price, discountPrice) {
+export function makeProductElement (image, title, price, discountPrice) {
   const newDiv = document.createElement('div')
   const imgSrc = `../${image}`
   newDiv.classList.add('product')
-  if(discountPrice === 0) {
+  if (discountPrice === 0) {
     newDiv.innerHTML = `
     <div class="img__con">
       <Image src="${imgSrc}" alt="Product image"/>
@@ -25,4 +25,4 @@ export function makeProductElement(image ,title, price, discountPrice) {
   `
   }
   return newDiv
-} 
+}

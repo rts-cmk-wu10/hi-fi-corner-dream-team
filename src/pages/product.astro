@@ -4,7 +4,7 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
 import { Image } from "astro:assets";
 import banner from "../assets/product_site/product_banner.png";
 import "../styles/global.css";
-import paypal from "../assets/product_site/paypal.png"
+import paypal from "../assets/product_site/paypal.png";
 ---
 
 <StartLayout title="Search products - HIFI-corner">
@@ -52,7 +52,7 @@ import paypal from "../assets/product_site/paypal.png"
 
                 <div class="checkoutBox">
                     <div class="formColorBox">
-                        <p class="formColorBoxText1">Finish*</p>
+                        <p class="formColorBoxText1">Finish *</p>
                         <p class="formColorBoxText2">* Required Fields</p>
                         <form action="">
                             <label class="colorLabelBox" for="">
@@ -97,12 +97,44 @@ import paypal from "../assets/product_site/paypal.png"
                                 type="submit"
                             />
                         </form>
-                        <br>
+                        <br />
                         <p class="or">-OR-</p>
                         <div class="paypalCheckout">
-                            <Image class="paypalIcon" src={paypal} alt="" format="webp" />
+                            <Image
+                                class="paypalIcon"
+                                src={paypal}
+                                alt=""
+                                format="webp"
+                            />
                             <p class="checkOut">Check Out</p>
                         </div>
+                        <p class="paypalUnderText">
+                            The safer, easier way to pay
+                        </p>
+                        <span class="line"></span>
+                    </div>
+                </div>
+
+                <div class="infoBox">
+                    <p class="infoTitle">ADDITIONAL INFORMATION</p>
+                    <div class="infoItemsBox">
+                        <p class="infoName">MANUFACTURER</p>
+                        <p class="infoValue">Marantz</p>
+
+                        <p class="infoName">MANUFACTURER LINK</p>
+                        <span class="infoValueSpan">Marantz PM6006</span>
+
+                        <p class="infoName">FREE WARRANTY</p>
+                        <p class="infoValue">3 years</p>
+
+                        <p class="infoName">DELIVERY CHARGE</p>
+                        <p class="infoValue">Free</p>
+
+                        <p class="infoName">DELIVERY TIME</p>
+                        <p class="infoValue">1 - 5 Working Days</p>
+
+                        <p class="infoName">CARD SURCHARGES</p>
+                        <p class="infoValue">No</p>
                     </div>
                 </div>
             </div>
@@ -149,7 +181,6 @@ import paypal from "../assets/product_site/paypal.png"
     }
 
     .productSection {
-        height: 800px;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
@@ -161,10 +192,6 @@ import paypal from "../assets/product_site/paypal.png"
 
     .productImgBig {
         border: 1px gray solid;
-    }
-
-    .productBox2 {
-        height: 800px;
     }
 
     .productName {
@@ -182,6 +209,7 @@ import paypal from "../assets/product_site/paypal.png"
     .productPriceBefore {
         text-decoration: line-through;
         text-align: end;
+        color: rgb(169, 169, 169);
     }
 
     .productPriceCurrent {
@@ -220,12 +248,11 @@ import paypal from "../assets/product_site/paypal.png"
 
     .checkoutBox {
         border: solid 1px grey;
-        height: 300px;
         margin-top: 2em;
     }
 
     .formColorBox {
-        height: 100px;
+        height: 120px;
         border-bottom: 1px grey solid;
         padding: 0.5em 1em 0em 1em;
         display: grid;
@@ -238,6 +265,10 @@ import paypal from "../assets/product_site/paypal.png"
         padding: 0.25em 8em 0.25em 1em;
     }
 
+    .colorLabelBox label {
+        padding-left: 1em;
+    }
+
     .formColorBoxText2 {
         text-align: end;
         color: red;
@@ -245,7 +276,7 @@ import paypal from "../assets/product_site/paypal.png"
 
     .formCheckOutBox {
         width: 100%;
-        height: 199px;
+        height: 250px;
         background-color: rgb(200, 200, 200);
         border-bottom: 1px grey solid;
         padding: 1em 1em 0em 1em;
@@ -277,10 +308,13 @@ import paypal from "../assets/product_site/paypal.png"
         font-weight: 700;
     }
 
+    .addToCart:hover {
+        color: black;
+    }
+
     .paypalIcon {
         max-width: 50px;
         max-height: 50px;
-        scale: 110%;
     }
 
     .paypalCheckout {
@@ -288,13 +322,25 @@ import paypal from "../assets/product_site/paypal.png"
         grid-template-columns: 50px 70px;
         background-color: orange;
         width: 130px;
-        height: 30px;
         border-radius: 5em;
         margin-left: 6em;
         margin-top: 1em;
         cursor: pointer;
-        justify-content: center ;
-        justify-content: start;
+        justify-content: center;
+    }
+
+    .paypalUnderText {
+        color: black;
+        font-size: 8px;
+        padding-top: 5px;
+        margin-left: 14em;
+    }
+
+    .line {
+        width: 95%;
+        padding-top: 2em;
+        display: block;
+        border-bottom: 1px solid grey;
     }
 
     .checkOut {
@@ -302,6 +348,48 @@ import paypal from "../assets/product_site/paypal.png"
         color: black;
         width: 70px;
         text-align: center;
-        
+        align-self: center;
+    }
+
+    .infoItemsBox {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: repeat(7, auto);
+        border: 1px solid grey;
+    }
+
+    .infoName {
+        grid-column: 1;
+        color: black;
+        font-size: 10px;
+        background-color: rgb(221, 221, 221);
+        border: 1px solid grey;
+        text-align: start;
+        padding: 1em 2em;
+        font-weight: 700;
+    }
+
+    .infoValue {
+        grid-column: 2;
+        color: black;
+        font-size: 11px;
+        border: 1px solid grey;
+        padding: 1em 2em;
+    }
+
+    .infoBox {
+        padding-top: 2em;
+    }
+
+    .infoTitle {
+        padding-bottom: 10px;
+    }
+
+    .infoValueSpan {
+        color: #b19b61;
+        grid-column: 2;
+        font-size: 11px;
+        border: 1px solid grey;
+        padding: 1em 2em;
     }
 </style>

@@ -3,25 +3,93 @@ import StartLayout from '../layouts/StartLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import '../styles/global.css';
 import Sort from '../components/Sort.astro';
-import { Image } from 'astro:assets';
-import '../styles/product.css'
+import '../styles/product.css';
 ---
 
 <script>
   import getDataFromApi from '../scripts/getData';
   import { makeProductElement } from '../scripts/makeProductElement';
+  import parameterMaker from '../scripts/parameterMaker';
 
+  let data;
+  const ulManu = document.querySelectorAll('.ul__manufacturer li');
+  const numberP = document.querySelectorAll('.sort__by__number__items');
   const productGrid = document.querySelector('.grid__col4');
-  const data = await getDataFromApi('products');
-  data.forEach((product) => {
-    const newProduct = makeProductElement(
-      product.pictures[0],
-      product.title,
-      product.price,
-      product.discount
-    );
-    productGrid.appendChild(newProduct);
+  const sortSelector = document.querySelector('#select__sort')
+
+
+  function makeElements(data) {
+    productGrid.innerHTML = '';
+    data.forEach((product) => {
+      const newProduct = makeProductElement(
+        product.pictures[0],
+        product.title,
+        product.price,
+        product.discount
+      );
+      productGrid.appendChild(newProduct);
+    });
+  }
+
+  // Puts a number on how many products are showing
+  function showListLength(data) {
+    numberP.forEach(element => {
+      element.textContent = `${data.length} item(s)`;
+    })
+  }
+
+  sortSelector.addEventListener('change', async () => {
+    if(sortSelector.value === 'price-ascending') {
+      data = await getDataFromApi(`products/${window.location.search}&_sort=price&_order=asc`)
+      makeElements(data)
+    }
+    if(sortSelector.value === 'price-descending') {
+      data = await getDataFromApi(`products/${window.location.search}&_sort=price&_order=desc`)
+      makeElements(data)
+    }
+    if(sortSelector.value === 'name') {
+      data = await getDataFromApi(`products/${window.location.search}&_sort=title&_order=asc`)
+      makeElements(data)
+    }
+    if(sortSelector.value === 'offer') {
+      data = await getDataFromApi(`products/${window.location.search}&_sort=discount&_order=desc`)
+      makeElements(data)
+    }
+  })
+
+  ulManu.forEach((li) => {
+    li.addEventListener('click', async (e) => {
+      parameterMaker('search', 'q', e.target.dataset.manufacturer);
+      data = await getDataFromApi(`products/${window.location.search}`);
+      makeElements(data);
+      showListLength(data)
+    });
   });
+
+  window.onload = async () => {
+    const stringsToLoop = [
+      'products/?q=creek',
+      'products/?q=exposure',
+      'products/?q=parasound',
+      'products/?q=manley',
+      'products/?q=project',
+      'products/?q=boesendorfer',
+      'products/?q=epos',
+      'products/?q=harbeth',
+      'products/?q=jolida',
+    ];
+    const dataFromLink = await getDataFromApi(`products/${window.location.search}`);
+    makeElements(dataFromLink);
+    numberP.innerHTML = `${dataFromLink.length} item(s)`;numberP.innerHTML
+    showListLength(dataFromLink)
+
+    stringsToLoop.forEach(async (element) => {
+      const dataLength = await getDataFromApi(element);
+      document.querySelector(`.product__count__${element.slice(12)}`).textContent =
+        dataLength.length;
+    });
+
+  };
 </script>
 
 <StartLayout title="Search products - HIFI-corner">
@@ -30,7 +98,7 @@ import '../styles/product.css'
     <div class="grid__con">
       <section class="filter__section">
         <div class="filter__products">
-          <ul>
+          <ul class="ul__category">
             <li>Amplifiers</li>
             <li>Speakers</li>
             <li>Turntables</li>
@@ -53,28 +121,49 @@ import '../styles/product.css'
             <p class="p--black p--upper">price</p>
           </div>
           <ul>
-            <li>£0.00 - £799.99 (<span class="product__count"></span>)</li>
-            <li>£800.00 - £999.99 (<span class="product__count"></span>)</li>
-            <li>£1,000.00 - £1,499.99 (<span class="product__count"></span>)</li>
-            <li>£1,500.00 - £1,999.99 (<span class="product__count"></span>)</li>
-            <li>£2,000.00 - £2,999.99 (<span class="product__count"></span>)</li>
-            <li>£3,000.00 - £3,499.99 (<span class="product__count"></span>)</li>
-            <li>£3,500.00 - £4,999.99 (<span class="product__count"></span>)</li>
-            <li>£5,000.00 - £7,999.99 (<span class="product__count"></span>)</li>
-            <li>£8,000.00 - £11,999.99 (<span class="product__count"></span>)</li>
-            <li>£12,000.00 and above(<span class="product__count"></span>)</li>
+            <li>£0.00 - £799.99 (<span class="product__count__0"></span>)</li>
+            <li>£800.00 - £999.99 (<span class="product__count__800"></span>)</li>
+            <li>£1,000.00 - £1,499.99 (<span class="product__count__1000"></span>)</li>
+            <li>£1,500.00 - £1,999.99 (<span class="product__count__1500"></span>)</li>
+            <li>£2,000.00 - £2,999.99 (<span class="product__count__2000"></span>)</li>
+            <li>£3,000.00 - £3,499.99 (<span class="product__count__3000"></span>)</li>
+            <li>£3,500.00 - £4,999.99 (<span class="product__count__3500"></span>)</li>
+            <li>£5,000.00 - £7,999.99 (<span class="product__count__5000"></span>)</li>
+            <li>£8,000.00 - £11,999.99 (<span class="product__count__8000"></span>)</li>
+            <li>£12,000.00 and above(<span class="product__count__12000"></span>)</li>
           </ul>
           <h3 class="p--black p--upper">manufacturer</h3>
-          <ul>
-            <li>Creek (<span class="product__count"></span>)</li>
-            <li>Exposure (<span class="product__count"></span>)</li>
-            <li>Parasound (<span class="product__count"></span>)</li>
-            <li>Manley (<span class="product__count"></span>)</li>
-            <li>Project (<span class="product__count"></span>)</li>
-            <li>Boesendorfer (<span class="product__count"></span>)</li>
-            <li>Epos (<span class="product__count"></span>)</li>
-            <li>Harbeth (<span class="product__count"></span>)</li>
-            <li>Jolida (<span class="product__count"></span>)</li>
+          <ul class="ul__manufacturer">
+            <li data-manufacturer="creek">
+              Creek (<span data-manufacturer="creek" class="product__count__creek"></span>)
+            </li>
+            <li data-manufacturer="exposure">
+              Exposure (<span data-manufacturer="exposure" class="product__count__exposure"></span>)
+            </li>
+            <li data-manufacturer="parasound">
+              Parasound (<span data-manufacturer="parasound" class="product__count__parasound"
+              ></span>)
+            </li>
+            <li data-manufacturer="manley">
+              Manley (<span data-manufacturer="manley" class="product__count__manley"></span>)
+            </li>
+            <li data-manufacturer="project">
+              Project (<span data-manufacturer="project" class="product__count__project"></span>)
+            </li>
+            <li data-manufacturer="boesendorfer">
+              Boesendorfer (<span
+                data-manufacturer="boesendorfer"
+                class="product__count__boesendorfer"></span>)
+            </li>
+            <li data-manufacturer="epos">
+              Epos (<span data-manufacturer="epos" class="product__count__epos"></span>)
+            </li>
+            <li data-manufacturer="harbeth">
+              Harbeth (<span data-manufacturer="harbeth" class="product__count__harbeth"></span>)
+            </li>
+            <li data-manufacturer="jolida">
+              Jolida (<span data-manufacturer="jolida" class="product__count__jolida"></span>)
+            </li>
           </ul>
         </div>
       </section>
@@ -108,6 +197,15 @@ import '../styles/product.css'
 
   ul {
     list-style: none;
+  }
+
+  ul li {
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  ul li:hover {
+    transform: scale(1.1);
   }
 
   body {

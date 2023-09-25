@@ -5,6 +5,11 @@ import youtube from "../assets/footer/play.png";
 import facebook from "../assets/footer/facebook.png";
 import twitter from "../assets/footer/twitter.png";
 import linkedin from "../assets/footer/linkedin.png";
+import paypal from "../assets/footer/paypal.png";
+import visa from "../assets/footer/visa.png";
+import mastercard from "../assets/footer/mastercard.png";
+import maestro from "../assets/footer/maestro.png";
+import jcb from "../assets/footer/jcb.png";
 ---
 
 <footer>
@@ -16,31 +21,37 @@ import linkedin from "../assets/footer/linkedin.png";
         </div>
 
         <div class="footerDiv2">
-            <a>Returns & Refunds ┃ Privacy Policy</a>
+            <a href="">Returns & Refunds ┃ Privacy Policy</a>
         </div>
 
         <div class="footerDiv3">
-            <p>Worldpay</p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p>PayPal</p>
+            <a href=""><i class="fa-solid fa-globe"></i> Worldpay</a>
+            <a href=""> <Image class="" src={visa} alt="" format="webp" /></a>
+            <a href="">
+                <Image class="" src={mastercard} alt="" format="webp" />
+            </a>
+            <a href="">
+                <Image class="" src={maestro} alt="" format="webp" />
+            </a>
+            <a href=""> <Image class="" src={jcb} alt="" format="webp" /></a>
+            <a href="">
+                <Image class="" src={paypal} alt="" format="webp" />
+                 PayPal
+            </a>
         </div>
-
         <div class="footerDiv4">
-            <p>
-                <Image class="" src={youtube} alt="" format="webp" />
-            </p>
-            <p>
+            <a href="">
                 <Image class="" src={facebook} alt="" format="webp" />
-            </p>
-            <p>
+            </a>
+            <a href="">
+                <Image class="" src={youtube} alt="" format="webp" />
+            </a>
+            <a href="">
                 <Image class="" src={twitter} alt="" format="webp" />
-            </p>
-            <p>
+            </a>
+            <a href="">
                 <Image class="" src={linkedin} alt="" format="webp" />
-            </p>
+            </a>
         </div>
     </div>
 </footer>
@@ -55,7 +66,7 @@ import linkedin from "../assets/footer/linkedin.png";
     a {
         margin: 0;
         font-family: "Museo sans rounded webfont";
-        font-weight: 700px;
+        font-weight: 700;
         font-size: 12px;
     }
 
@@ -78,6 +89,7 @@ import linkedin from "../assets/footer/linkedin.png";
 
     .footerDiv2 a {
         color: white;
+        text-decoration: none;
     }
 
     .footerDiv3 {
@@ -85,10 +97,34 @@ import linkedin from "../assets/footer/linkedin.png";
         display: grid;
         grid-template-columns: repeat(6, auto);
         grid-template-rows: 1fr;
+        max-width: 300px;
     }
 
-    .footerDiv3 p {
+    .footerDiv3 img {
+        scale: 120%;
+    }
+
+    .footerDiv3 a {
         font-size: 10px;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        max-height: 10px;
+    }
+
+    .footerDiv4 {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        column-gap: 0.5em;
+        justify-content: right;
+    }
+
+    .footerDiv4 a {
+        max-height: 16px;
+        max-width: 16px;
+    }
+
+    .fa-globe {
         color: white;
     }
 </style>

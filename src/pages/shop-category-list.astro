@@ -11,6 +11,12 @@ import '../styles/product.css'
   import getDataFromApi from '../scripts/getData';
   import { makeProductElement } from '../scripts/makeProductElement';
 
+  // Get URL params for search
+  const urlParams = new URLSearchParams(window.location.search)
+  urlParams.set('q', 'creek')
+  
+
+  const numberP = document.querySelector('.sort__by__number__items')
   const productGrid = document.querySelector('.grid__col4');
   const data = await getDataFromApi('products');
   data.forEach((product) => {
@@ -22,6 +28,8 @@ import '../styles/product.css'
     );
     productGrid.appendChild(newProduct);
   });
+  // Puts a number on how many products on search list
+  numberP.innerHTML = `${data.length} item(s)`
 </script>
 
 <StartLayout title="Search products - HIFI-corner">
@@ -53,28 +61,28 @@ import '../styles/product.css'
             <p class="p--black p--upper">price</p>
           </div>
           <ul>
-            <li>£0.00 - £799.99 (<span class="product__count"></span>)</li>
-            <li>£800.00 - £999.99 (<span class="product__count"></span>)</li>
-            <li>£1,000.00 - £1,499.99 (<span class="product__count"></span>)</li>
-            <li>£1,500.00 - £1,999.99 (<span class="product__count"></span>)</li>
-            <li>£2,000.00 - £2,999.99 (<span class="product__count"></span>)</li>
-            <li>£3,000.00 - £3,499.99 (<span class="product__count"></span>)</li>
-            <li>£3,500.00 - £4,999.99 (<span class="product__count"></span>)</li>
-            <li>£5,000.00 - £7,999.99 (<span class="product__count"></span>)</li>
-            <li>£8,000.00 - £11,999.99 (<span class="product__count"></span>)</li>
-            <li>£12,000.00 and above(<span class="product__count"></span>)</li>
+            <li>£0.00 - £799.99 (<span class="product__count__0"></span>)</li>
+            <li>£800.00 - £999.99 (<span class="product__count__800"></span>)</li>
+            <li>£1,000.00 - £1,499.99 (<span class="product__count__1000"></span>)</li>
+            <li>£1,500.00 - £1,999.99 (<span class="product__count__1500"></span>)</li>
+            <li>£2,000.00 - £2,999.99 (<span class="product__count__2000"></span>)</li>
+            <li>£3,000.00 - £3,499.99 (<span class="product__count__3000"></span>)</li>
+            <li>£3,500.00 - £4,999.99 (<span class="product__count__3500"></span>)</li>
+            <li>£5,000.00 - £7,999.99 (<span class="product__count__5000"></span>)</li>
+            <li>£8,000.00 - £11,999.99 (<span class="product__count__8000"></span>)</li>
+            <li>£12,000.00 and above(<span class="product__count__12000"></span>)</li>
           </ul>
           <h3 class="p--black p--upper">manufacturer</h3>
           <ul>
-            <li>Creek (<span class="product__count"></span>)</li>
-            <li>Exposure (<span class="product__count"></span>)</li>
-            <li>Parasound (<span class="product__count"></span>)</li>
-            <li>Manley (<span class="product__count"></span>)</li>
-            <li>Project (<span class="product__count"></span>)</li>
-            <li>Boesendorfer (<span class="product__count"></span>)</li>
-            <li>Epos (<span class="product__count"></span>)</li>
-            <li>Harbeth (<span class="product__count"></span>)</li>
-            <li>Jolida (<span class="product__count"></span>)</li>
+            <li>Creek (<span class="product__count__creek"></span>)</li>
+            <li>Exposure (<span class="product__count__exposure"></span>)</li>
+            <li>Parasound (<span class="product__count__parasound"></span>)</li>
+            <li>Manley (<span class="product__count__manley"></span>)</li>
+            <li>Project (<span class="product__count__project"></span>)</li>
+            <li>Boesendorfer (<span class="product__count__boesendorfer"></span>)</li>
+            <li>Epos (<span class="product__count__epos"></span>)</li>
+            <li>Harbeth (<span class="product__count__herbeth"></span>)</li>
+            <li>Jolida (<span class="product__count__jolida"></span>)</li>
           </ul>
         </div>
       </section>
@@ -108,6 +116,15 @@ import '../styles/product.css'
 
   ul {
     list-style: none;
+  }
+
+  ul li {
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  ul li:hover {
+    transform: scale(1.1);
   }
 
   body {

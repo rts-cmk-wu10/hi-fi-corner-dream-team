@@ -52,3 +52,19 @@
   display: flex;
   gap: 2em;
 }
+
+.product__button {
+  text-transform: uppercase;
+  color: white;
+  font-weight: 700;
+  margin-top: 2em;
+  padding: 0.5em 1em;
+  background-color: var(--text-color);
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.product__button:hover {
+  transform: scale(1.25);
+}

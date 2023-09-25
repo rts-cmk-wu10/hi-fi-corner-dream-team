@@ -9,6 +9,7 @@ export function makeProductElement(image ,title, price, discountPrice) {
     </div>
     <h4>${title}</h4>
     <p class="price__now">${price}</p>
+    <button class="product__button">add to cart</button>
   `
   } else {
     newDiv.innerHTML = `
@@ -20,6 +21,7 @@ export function makeProductElement(image ,title, price, discountPrice) {
       <p class="price__before">${price}</p>
       <p class="price__now">${price - discountPrice}</p>
     </div>
+    <button class="product__button">add to cart</button>
   `
   }
   return newDiv

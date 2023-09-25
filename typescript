@@ -65,4 +65,34 @@ Node.js v20.6.1
 [2K[1G[1A[2K[1G[1A[0m[2m10.50.48 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/scripts/parameterMaker.js [33m(x2)[39m
 [2K[1G[1A[2K[1G[1A[0m[2m10.51.42 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/scripts/parameterMaker.js [33m(x3)[39m
 [2K[1G[1A[2K[1G[1A[0m[2m10.51.43 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/scripts/parameterMaker.js [33m(x4)[39m
-[2K[1G[1A[2K[1G[1A[0m[2m10.51.44 [22m[1m[36m[astro][39m[22m [0m[32mreloa
+[2K[1G[1A[2K[1G[1A[0m[2m10.51.44 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/scripts/parameterMaker.js [33m(x5)[39m
+[0m[2m10.51.44 [22m[1m[36m[astro][39m[22m [0m[32mupdate[39m /typescript
+[0m[2m10.51.53 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro
+[2K[1G[1A[2K[1G[1A[0m[2m10.53.43 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x2)[39m
+[2K[1G[1A[2K[1G[1A[0m[2m10.55.25 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x3)[39m
+[2K[1G[1A[2K[1G[1A[0m[2m11.02.07 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x4)[39m
+[0m[2m11.02.09 [22m[1m[36m[serve][39m[22m [0m[1m[33m   404[39m[22m                             /favicon.ico
+[0m[2m11.03.32 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro
+[2K[1G[1A[2K[1G[1A[0m[2m11.04.11 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x2)[39m
+[2K[1G[1A[2K[1G[1A[0m[2m11.05.00 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x3)[39m
+[2K[1G[1A[2K[1G[1A[0m[2m11.05.35 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x4)[39m
+[2K[1G[1A[2K[1G[1A[0m[2m11.06.22 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x5)[39m
+[2K[1G[1A[2K[1G[1A[0m[2m11.07.43 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x6)[39m
+[2K[1G[1A[2K[1G[1A[0m[2m11.07.58 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x7)[39m
+[2K[1G[1A[2K[1G[1A[0m[2m11.08.11 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x8)[39m
+[2K[1G[1A[2K[1G[1A[0m[2m11.08.47 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x9)[39m
+[2K[1G[1A[2K[1G[1A[0m[2m11.08.49 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x10)[39m
+[2K[1G[1A[2K[1G[1A[0m[2m11.09.23 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x11)[39m
+[2K[1G[1A[2K[1G[1A[0m[2m11.09.36 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x12)[39m
+[2K[1G[1A[2K[1G[1A[0m[2m11.09.42 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x13)[39m
+[2K[1G[1A[2K[1G[1A[0m[2m11.13.24 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x14)[39m
+[0m[2m11.13.26 [22m[1m[36m[astro][39m[22m [0m[32mupdate[39m /src/scripts/productSorting.js
+[0m[2m11.13.34 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro
+[0m[2m11.14.33 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/scripts/parameterMaker.js
+[0m[2m11.25.04 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro
+[2K[1G[1A[2K[1G[1A[0m[2m11.25.08 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x2)[39m
+[2K[1G[1A[2K[1G[1A[0m[2m11.25.35 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x3)[39m
+[2K[1G[1A[2K[1G[1A[0m[2m11.26.58 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x4)[39m
+[2K[1G[1A[2K[1G[1A[0m[2m11.27.36 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x5)[39m
+[2K[1G[1A[2K[1G[1A[0m[2m11.30.11 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m(x6)[39m
+[2K[1G[1A[2K[1G[1A[0m[2m11.30.38 [22m[1m[36m[astro][39m[22m [0m[32mreload[39m /src/pages/shop-category-list.astro [33m

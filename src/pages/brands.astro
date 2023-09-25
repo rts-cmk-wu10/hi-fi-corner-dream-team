@@ -2,22 +2,104 @@
 import StartLayout from "../layouts/StartLayout.astro";
 import { Image } from "astro:assets";
 import Background from "../assets/brands/background.png";
+import "../styles/global.css";
 ---
 
 <StartLayout title="Brands - HIFI-corner">
-    <div class="speakerBackground">
-        <Image
-            src={Background}
-            alt="speakers"
-            class="background"
-            format="webp"
-        />
-    </div>
+	<div class="speakerBackground">
+		<Image
+			src={Background}
+			alt="speakers"
+			class="background"
+			format="webp"
+		/>
+		<div class="box__box">
+			<div class="box__hifi">
+				<p>hi</p>
+				<p>fi</p>
+			</div>
+			<p class="box__address">hificorner.co.uk</p>
+		</div>
+		<div class="topBrands">
+			<p>top brands</p>
+		</div>
+		<div class="brandBox">
+			<div class="brandBox__grid">
+				<div></div>
+				<div>
+					<h3>hej per</h3>
+					<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis autem repellat, alias assumenda asperiores molestiae impedit sint voluptatem aliquam numquam aperiam! Ad, possimus error reprehenderit tempore unde cupiditate ipsa blanditiis?</p>
+				</div>
+			</div>
+		</div>
+	</div>
 </StartLayout>
 
 <style>
-    .background{
-      width: 100%;
-      height: auto;
-    }
+	.background {
+		width: 100%;
+		height: 100vh;
+	}
+
+	.speakerBackground {
+		display: grid;
+	}
+
+	.background,
+	.box__box,
+	.topBrands,
+	.brandBox {
+		grid-column: 1;
+		grid-row: 1;
+	}
+
+	.box__box {
+		margin-bottom: 7em;
+		margin-right: 5em;
+		justify-self: right;
+		align-self: center;
+	}
+
+	.box__box > p {
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 1.1em;
+		font-weight: 700;
+	}
+
+	.box__hifi {
+		border: 2px solid rgb(255, 255, 255);
+		padding: 6em 1em 0 0.4em;
+		font-weight: 700;
+		width: 180px;
+		height: 180px;
+	}
+
+	.box__hifi > p {
+		text-transform: uppercase;
+		color: rgb(255, 255, 255);
+		font-size: 2em;
+	}
+
+	.topBrands {
+		color: white;
+		text-transform: uppercase;
+		font-size: 2em;
+		margin-left: 5em;
+		margin-bottom: 5em;
+		justify-self: left;
+		align-self: center;
+	}
+
+	.brandBox {
+		margin-top: 27em;
+		margin-right: 5em;
+		margin-left: 5em;
+		background-color: white;
+	}
+
+	.brandBox__grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
 </style>

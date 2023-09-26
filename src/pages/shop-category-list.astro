@@ -12,6 +12,8 @@ import '../styles/product.css';
   import parameterMaker from '../scripts/parameterMaker';
 
   let data;
+  const spinner = document.querySelector('.lds-dual-ring')
+  const title = document.querySelector('.product__section__title')
   const ulManu = document.querySelectorAll('.ul__manufacturer li');
   const numberP = document.querySelectorAll('.sort__by__number__items');
   const productGrid = document.querySelector('.grid__col4');
@@ -59,6 +61,7 @@ import '../styles/product.css';
   ulManu.forEach((li) => {
     li.addEventListener('click', async (e) => {
       parameterMaker('search', 'q', e.target.dataset.manufacturer);
+      title.textContent = window.location.search.slice(3)
       data = await getDataFromApi(`products/${window.location.search}`);
       makeElements(data);
       showListLength(data);
@@ -78,10 +81,12 @@ import '../styles/product.css';
       'products/?q=jolida',
     ];
     const dataFromLink = await getDataFromApi(`products/${window.location.search}`);
+    title.textContent = window.location.search.slice(3)
     makeElements(dataFromLink);
     numberP.innerHTML = `${dataFromLink.length} item(s)`;
     showListLength(dataFromLink);
 
+    // For the number of products on each manufacturer
     stringsToLoop.forEach(async (element) => {
       const dataLength = await getDataFromApi(element);
       document.querySelector(`.product__count__${element.slice(12)}`).textContent =
@@ -166,8 +171,9 @@ import '../styles/product.css';
         </div>
       </section>
       <section class="product__section">
-        <h1 class="product__section__title">amplifiers</h1>
+        <h1 class="product__section__title"></h1>
         <Sort />
+        <div class="lds-dual-ring"></div>
         <section class="grid__col4"></section>
         <Sort />
       </section>
@@ -208,6 +214,11 @@ import '../styles/product.css';
 
   body {
     background-color: black;
+  }
+
+  .product__section__title {
+    text-transform: capitalize;
+    padding-bottom: 1em;
   }
 
   .grid__con {
@@ -277,5 +288,33 @@ import '../styles/product.css';
 
   .manufacturer__ul {
     padding: 0.5em 0 0.5em 1em;
+  }
+
+  .lds-dual-ring {
+    display: none;
+    position: relative;
+    top: calc(30% - 40px);
+    left: calc(50% - 40px);
+    width: 80px;
+    height: 80px;
+  }
+  .lds-dual-ring:after {
+    content: ' ';
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #000;
+    border-color: #000 transparent #000 transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+  }
+  @keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 </style>

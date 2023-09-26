@@ -60,7 +60,7 @@ import '../styles/product.css';
 
   ulManu.forEach((li) => {
     li.addEventListener('click', async (e) => {
-      parameterMaker('search', 'q', e.target.dataset.manufacturer);
+      parameterMaker('q', e.target.dataset.manufacturer);
       title.textContent = window.location.search.slice(3)
       data = await getDataFromApi(`products/${window.location.search}`);
       makeElements(data);

@@ -1,4 +1,4 @@
-export function makeProductElement (image, title, price, discountPrice) {
+export default function makeProductElement (image, title, price, discountPrice) {
   const newDiv = document.createElement('div')
   const imgSrc = `../${image}`
   newDiv.classList.add('product')
@@ -21,6 +21,7 @@ export function makeProductElement (image, title, price, discountPrice) {
       <p class="price__before">${price}</p>
       <p class="price__now">${price - discountPrice}</p>
     </div>
+    <p class="price__discount">${discountPrice}</p>
     <button class="product__button">add to cart</button>
   `
   }

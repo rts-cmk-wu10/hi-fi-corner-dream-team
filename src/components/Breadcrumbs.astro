@@ -2,17 +2,29 @@
 import '../styles/global.css'
 ---
 
+<script>
+  import {titleChecker} from '../scripts/utils'
+  // A mutation Observer for changing the breadcrumbs text to match with the current clicked category
+  titleChecker()
+</script>
+
 <div class="breadcrumbs">
   <a  class="bread__link" href="/">Home</a>
   <p>/</p>
-  <a class="bread__link" href="/shop_category/">Amplifier</a>
+  <a class="bread__link" href="/shop-category">Shop</a>
+  <p>/</p>
+  <p class="bread__link currentsite"></p>
 </div>
 
 <style>
+  .currentsite {
+    text-transform: capitalize;
+  }
+  
   .breadcrumbs {
     display: flex;
     gap: 1em;
-    padding: 2em 0;
+    padding: 2em 2em;
   }
 
   a {
@@ -24,7 +36,7 @@ import '../styles/global.css'
     color: var(--text-color);
   }
 
-  a:last-child {
+  p:last-child {
     color: initial;
   }
 </style>

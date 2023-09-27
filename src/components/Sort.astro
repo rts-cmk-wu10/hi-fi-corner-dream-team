@@ -1,11 +1,17 @@
+<script>
+  import { gridLayoutChanger } from "../scripts/utils";
+
+  gridLayoutChanger()
+</script>
+
 <div class="sort__div">
   <div class="sort__by__con">
     <p class="p--upper">sort by:</p>
     <select name="sort__by" id="select__sort">
+      <option value="offer">Offer</option>
       <option value="price-ascending">Price ascending</option>
       <option value="price-descending">Price descending</option>
       <option value="name">Name</option>
-      <option value="offer">Offer</option>
     </select>
   </div>
   <div class="view__as__con">
@@ -16,10 +22,11 @@
   <p class="sort__by__number__items"></p>
   <div class="sort__by__numbers">
     <p class="p--upper">show:</p>
-    <select name="show__numbers">
+    <select name="show__numbers" id="select__show">
+      <option value="0">No limit</option>
+      <option value="05">5</option>
+      <option value="10">10</option>
       <option value="20">20</option>
-      <option value="50">50</option>
-      <option value="100">100</option>
     </select>
   </div>
 </div>

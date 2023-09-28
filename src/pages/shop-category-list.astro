@@ -19,6 +19,7 @@ import '../styles/product.css';
   const title = document.querySelector('.product__section__title');
   const ulManu = document.querySelectorAll('.ul__manufacturer li');
   const ulCategory = document.querySelectorAll('.ul__category li');
+  const ulPrices = document.querySelectorAll('.ul__prices li');
   const numberP = document.querySelectorAll('.sort__by__number__items');
   const productGrid = document.querySelector('.grid__col4');
   const sortSelector = document.querySelectorAll('#select__sort');
@@ -139,6 +140,86 @@ import '../styles/product.css';
     });
   });
 
+  ulManu.forEach((li) => {
+    li.addEventListener('click', async (e) => {
+      spinner.startSpinner();
+      parameterMaker('q', e.target.dataset.manufacturer);
+      title.textContent = window.location.search.slice(3);
+      currentQuery = window.location.search + currentSort + currentLimit;
+      data = await getDataFromApi(`products/${currentQuery}`);
+      makeElements(data);
+      spinner.stopSpinner();
+      showListLength(data);
+    });
+  });
+
+  ulPrices.forEach((li) => {
+    li.addEventListener('click', async (e) => {
+      spinner.startSpinner();
+      if (
+        e.target.dataset.priceRange.includes('0') &&
+        e.target.dataset.priceRange.includes('799')
+      ) {
+        title.textContent = '£0 - £799';
+      }
+      if (
+        e.target.dataset.priceRange.includes('800') &&
+        e.target.dataset.priceRange.includes('999')
+      ) {
+        title.textContent = '£800 - £999';
+      }
+      if (
+        e.target.dataset.priceRange.includes('1000') &&
+        e.target.dataset.priceRange.includes('1499')
+      ) {
+        title.textContent = '£1000 - £1499';
+      }
+      if (
+        e.target.dataset.priceRange.includes('1500') &&
+        e.target.dataset.priceRange.includes('1999')
+      ) {
+        title.textContent = '£1500 - £1999';
+      }
+      if (
+        e.target.dataset.priceRange.includes('2000') &&
+        e.target.dataset.priceRange.includes('2999')
+      ) {
+        title.textContent = '£2000 - £2999';
+      }
+      if (
+        e.target.dataset.priceRange.includes('3000') &&
+        e.target.dataset.priceRange.includes('3499')
+      ) {
+        title.textContent = '£3000 - £3499';
+      }
+      if (
+        e.target.dataset.priceRange.includes('3500') &&
+        e.target.dataset.priceRange.includes('4999')
+      ) {
+        title.textContent = '£3500 - £4999';
+      }
+      if (
+        e.target.dataset.priceRange.includes('5000') &&
+        e.target.dataset.priceRange.includes('7999')
+      ) {
+        title.textContent = '£5000 - £7999';
+      }
+      if (
+        e.target.dataset.priceRange.includes('8000') &&
+        e.target.dataset.priceRange.includes('11999')
+      ) {
+        title.textContent = '£8000 - £11999';
+      }
+      if (e.target.dataset.priceRange.includes('12000')) {
+        title.textContent = '£12000 and above';
+      }
+      data = await getDataFromApi(e.target.dataset.priceRange);
+      makeElements(data);
+      spinner.stopSpinner();
+      showListLength(data);
+    });
+  });
+
   showSelector.forEach((selector) => {
     selector.addEventListener('change', async () => {
       spinner.startSpinner();
@@ -206,7 +287,7 @@ import '../styles/product.css';
           sortSelector.forEach((selector2) => {
             selector2.value = 'price-ascending';
           });
-          currentSort = '&_sort=price&_order=asc'
+          currentSort = '&_sort=price&_order=asc';
           currentQuery = window.location.search + currentSort + currentLimit;
           data = await getDataFromApi(`products/${currentQuery}`);
           makeElements(data);
@@ -217,7 +298,7 @@ import '../styles/product.css';
           sortSelector.forEach((selector2) => {
             selector2.value = 'price-descending';
           });
-          currentSort = '&_sort=price&_order=desc'
+          currentSort = '&_sort=price&_order=desc';
           currentQuery = window.location.search + currentSort + currentLimit;
           data = await getDataFromApi(`products/${currentQuery}`);
           makeElements(data);
@@ -228,7 +309,7 @@ import '../styles/product.css';
           sortSelector.forEach((selector2) => {
             selector2.value = 'name';
           });
-          currentSort = '&_sort=title&_order=asc'
+          currentSort = '&_sort=title&_order=asc';
           currentQuery = window.location.search + currentSort + currentLimit;
           data = await getDataFromApi(`products/${currentQuery}`);
           makeElements(data);
@@ -239,7 +320,7 @@ import '../styles/product.css';
           sortSelector.forEach((selector2) => {
             selector2.value = 'offer';
           });
-          currentSort = '&_sort=discount&_order=desc'
+          currentSort = '&_sort=discount&_order=desc';
           currentQuery = window.location.search + currentSort + currentLimit;
           data = await getDataFromApi(`products/${currentQuery}`);
           makeElements(data);
@@ -252,32 +333,32 @@ import '../styles/product.css';
     });
   });
 
-  ulManu.forEach((li) => {
-    li.addEventListener('click', async (e) => {
-      spinner.startSpinner();
-      parameterMaker('q', e.target.dataset.manufacturer);
-      title.textContent = window.location.search.slice(3);
-      currentQuery = window.location.search + currentSort + currentLimit;
-      data = await getDataFromApi(`products/${currentQuery}`);
-      makeElements(data);
-      spinner.stopSpinner();
-      showListLength(data);
-    });
-  });
-
   window.onload = async () => {
     // Strings to loop every manufacturer product count
     const stringsToLoop = [
-      'products/?q=creek',
-      'products/?q=exposure',
-      'products/?q=parasound',
-      'products/?q=manley',
-      'products/?q=project',
-      'products/?q=boesendorfer',
-      'products/?q=epos',
-      'products/?q=harbeth',
-      'products/?q=jolida',
+      'products?q=creek',
+      'products?q=exposure',
+      'products?q=parasound',
+      'products?q=manley',
+      'products?q=project',
+      'products?q=boesendorfer',
+      'products?q=epos',
+      'products?q=harbeth',
+      'products?q=jolida',
     ];
+
+    const pricesToLoop = {
+      '0': 'products?price_gte=0&price_lte=799',
+      '800': 'products?price_gte=800&price_lte=999',
+      '1000': 'products?price_gte=1000&price_lte=1499',
+      '1500': 'products?price_gte=1500&price_lte=1999',
+      '2000': 'products?price_gte=2000&price_lte=2999',
+      '3000': 'products?price_gte=3000&price_lte=3499',
+      '3500': 'products?price_gte=3500&price_lte=4999',
+      '5000': 'products?price_gte=5000&price_lte=7999',
+      '8000': 'products?price_gte=8000&price_lte=11999',
+      '12000': 'products?price_gte=12000',
+    };
 
     // Makes products when you click on a category from /shop-category site
     const dataFromLink = await getDataFromApi(
@@ -290,11 +371,15 @@ import '../styles/product.css';
     // For the number of products on each manufacturer
     stringsToLoop.forEach(async (element) => {
       const dataLength = await getDataFromApi(element);
-      document.querySelector(`.product__count__${element.slice(12)}`).textContent =
+      document.querySelector(`.product__count__${element.slice(11)}`).textContent =
         dataLength.length;
     });
 
     // For the prices section in the filter
+    Object.entries(pricesToLoop).forEach(async (key) => {
+      const dataLength1 = await getDataFromApi(key[1]);
+      document.querySelector(`.product__count__${key[0]}`).textContent = dataLength1.length;
+    });
   };
 </script>
 
@@ -325,17 +410,37 @@ import '../styles/product.css';
             <p class="p--black">Filter</p>
             <p class="p--black p--upper">price</p>
           </div>
-          <ul>
-            <li>£0.00 - £799.99 (<span class="product__count__0"></span>)</li>
-            <li>£800.00 - £999.99 (<span class="product__count__800"></span>)</li>
-            <li>£1,000.00 - £1,499.99 (<span class="product__count__1000"></span>)</li>
-            <li>£1,500.00 - £1,999.99 (<span class="product__count__1500"></span>)</li>
-            <li>£2,000.00 - £2,999.99 (<span class="product__count__2000"></span>)</li>
-            <li>£3,000.00 - £3,499.99 (<span class="product__count__3000"></span>)</li>
-            <li>£3,500.00 - £4,999.99 (<span class="product__count__3500"></span>)</li>
-            <li>£5,000.00 - £7,999.99 (<span class="product__count__5000"></span>)</li>
-            <li>£8,000.00 - £11,999.99 (<span class="product__count__8000"></span>)</li>
-            <li>£12,000.00 and above(<span class="product__count__12000"></span>)</li>
+          <ul class="ul__prices">
+            <li data-price-range="products?price_gte=0&price_lte=799">
+              £0.00 - £799.99 (<span class="product__count__0"></span>)
+            </li>
+            <li data-price-range="products?price_gte=800&price_lte=999">
+              £800.00 - £999.99 (<span class="product__count__800"></span>)
+            </li>
+            <li data-price-range="products?price_gte=1000&price_lte=1499">
+              £1,000.00 - £1,499.99 (<span class="product__count__1000"></span>)
+            </li>
+            <li data-price-range="products?price_gte=1500&price_lte=1999">
+              £1,500.00 - £1,999.99 (<span class="product__count__1500"></span>)
+            </li>
+            <li data-price-range="products?price_gte=2000&price_lte=2999">
+              £2,000.00 - £2,999.99 (<span class="product__count__2000"></span>)
+            </li>
+            <li data-price-range="products?price_gte=3000&price_lte=3499">
+              £3,000.00 - £3,499.99 (<span class="product__count__3000"></span>)
+            </li>
+            <li data-price-range="products?price_gte=3500&price_lte=4999">
+              £3,500.00 - £4,999.99 (<span class="product__count__3500"></span>)
+            </li>
+            <li data-price-range="products?price_gte=5000&price_lte=7999">
+              £5,000.00 - £7,999.99 (<span class="product__count__5000"></span>)
+            </li>
+            <li data-price-range="products?price_gte=8000&price_lte=11999">
+              £8,000.00 - £11,999.99 (<span class="product__count__8000"></span>)
+            </li>
+            <li data-price-range="products?price_gte=12000">
+              £12,000.00 and above(<span class="product__count__12000"></span>)
+            </li>
           </ul>
           <h3 class="p--black p--upper">manufacturer</h3>
           <ul class="ul__manufacturer">

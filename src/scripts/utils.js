@@ -23,15 +23,20 @@ export function titleChecker() {
 }
 
 export function gridLayoutChanger() {
-  const gridButtonCells = document.querySelector('.fa-table-cells-large')
-  const gridButtonLines = document.querySelector('.fa-list')
+  const gridButtonCells = document.querySelectorAll('.fa-table-cells-large')
+  const gridButtonLines = document.querySelectorAll('.fa-list')
   const gridElement = document.querySelector('.grid__col4')
 
-  gridButtonLines.addEventListener('click', () => {
-    gridElement.style.gridTemplateColumns = '1fr'
+  gridButtonLines.forEach(element => {
+    element.addEventListener('click', () => {
+      gridElement.style.gridTemplateColumns = '1fr'
+    })
   })
-
-  gridButtonCells.addEventListener('click', () => {
-    gridElement.style.gridTemplateColumns = 'repeat(auto-fill, minmax(300px, 1fr))'
+  
+  gridButtonCells.forEach(element => {
+    element.addEventListener('click', () => {
+      gridElement.style.gridTemplateColumns = 'repeat(auto-fill, minmax(300px, 1fr))'
+    })
   })
+  
 }

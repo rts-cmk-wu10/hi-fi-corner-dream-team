@@ -360,13 +360,20 @@ import '../styles/product.css';
       '12000': 'products?price_gte=12000',
     };
 
-    // Makes products when you click on a category from /shop-category site
+    // Makes products when you click on a category from /shop-category site and search
     const dataFromLink = await getDataFromApi(
       `products/${window.location.search}&_sort=discount&_order=desc`
     );
-    title.textContent = window.location.search.slice(3);
-    makeElements(dataFromLink);
-    showListLength(dataFromLink);
+    if(dataFromLink.length === 0) {
+      noDataShower()
+      title.textContent = window.location.search.slice(3);
+      showListLength(dataFromLink);
+    } else {
+      title.textContent = window.location.search.slice(3);
+      makeElements(dataFromLink);
+      showListLength(dataFromLink);
+    }
+   
 
     // For the number of products on each manufacturer
     stringsToLoop.forEach(async (element) => {

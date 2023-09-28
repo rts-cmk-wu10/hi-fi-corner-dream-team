@@ -5,8 +5,13 @@ import hifiLogo from "../assets/header/hifi_logo.jpg";
 ---
 
 <script>
+    import getDataFromApi from "../scripts/getData";
+		import parameterMaker from "../scripts/parameterMaker";
     const getURL = window.location.href;
     const header = document.querySelector("header")
+    const form = document.querySelector('.upperNav_search')
+    const datalist = document.querySelector('#datalist')
+
     if (!getURL.includes("shop")) {
         header.style.position = "absolute";
     }
@@ -14,6 +19,28 @@ import hifiLogo from "../assets/header/hifi_logo.jpg";
         header.style.position = "initial";
         document.querySelector('.upperNav').style.backgroundColor = 'black'
     }
+
+		const data2 = await getDataFromApi('manufacturer?q=')
+		data2.forEach(element => {
+        const newOption = document.createElement('option')
+        newOption.textContent = element.name
+        datalist.appendChild(newOption)
+    })
+
+    const data = await getDataFromApi('products?q=')
+    data.forEach(element => {
+        const newOption = document.createElement('option')
+        newOption.textContent = element.title
+        datalist.appendChild(newOption)
+    })
+
+		form.addEventListener('submit', (e) => {
+			e.preventDefault()
+			const params = new URLSearchParams()
+			params.set('q', form.input.value)
+			location.replace(`/shop-category-list/?${params.toString()}`)
+		})
+
 </script>
 
 <header>
@@ -22,14 +49,18 @@ import hifiLogo from "../assets/header/hifi_logo.jpg";
             <Image class="upperNav_logo" src={hifiLogo} alt="" format="webp" />
         </a>
 
-        <form class="upperNav_search" action="">
+        <form class="upperNav_search" action="/shop-category-list">
             <input
                 placeholder="Search entire store here..."
                 type="search"
-                name=""
-                id=""
                 class="upperNav_searchInput"
+                list="datalist"
+								id="input"
+								autocomplete="off"
             />
+            <datalist id="datalist">
+
+            </datalist>
             <button type="submit"
                 ><i class="fa-solid fa-magnifying-glass"></i></button
             >

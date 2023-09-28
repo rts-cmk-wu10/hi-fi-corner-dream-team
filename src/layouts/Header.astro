@@ -6,8 +6,13 @@ import hifiLogo from "../assets/header/hifi_logo.jpg";
 
 <script>
     const getURL = window.location.href;
+    const header = document.querySelector("header")
     if (!getURL.includes("shop")) {
-        document.querySelector("header").style.position = "absolute";
+        header.style.position = "absolute";
+    }
+    if(getURL.includes('brands')) {
+        header.style.position = "initial";
+        document.querySelector('.upperNav').style.backgroundColor = 'black'
     }
 </script>
 

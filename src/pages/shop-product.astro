@@ -1,512 +1,513 @@
 ---
-import StartLayout from "../layouts/StartLayout.astro";
-import Breadcrumbs from "../components/Breadcrumbs.astro";
-import { Image } from "astro:assets";
-import banner from "../assets/product_site/product_banner.png";
-import "../styles/global.css";
-import paypal from "../assets/product_site/paypal.png";
+import StartLayout from '../layouts/StartLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { Image } from 'astro:assets';
+import banner from '../assets/product_site/product_banner.png';
+import '../styles/global.css';
+import '../styles/product.css';
+import paypal from '../assets/product_site/paypal.png';
 ---
 
-<StartLayout title="Search products - HIFI-corner">
-    <div id="wrapper">
-        <Breadcrumbs />
-        <div class="bannerBox">
-            <Image class="" src={banner} alt="" format="webp" />
-        </div>
+<script>
+  import getDataFromApi from '../scripts/getData';
 
-        <section class="productSection">
-            <div class="productBox1">
-                <img
-                    class="productImgBig"
-                    src="https://via.placeholder.com/400x300"
-                    alt=""
-                />
-                <span>MORE VIEWS</span>
-                <div class="moreImgsBox">
-                    <img src="https://via.placeholder.com/50x50" alt="" />
-                    <img src="https://via.placeholder.com/50x50" alt="" />
-                </div>
-            </div>
+  const title = document.querySelector('.productName');
+  const priceBefore = document.querySelector('.productPriceBefore');
+  const priceAfter = document.querySelector('.productPriceCurrent');
+  const productDesc = document.querySelector('.productText');
+  const productBigImg = document.querySelector('.productImgBig');
+  const smallImgBox = document.querySelector('.moreImgsBox');
+  const manufacturerName = document.querySelector('.manufacturer__name')
+  const manufacturerLink = document.querySelector('.manufacturer__link')
+  const productOptions = document.querySelector('.productOptions')
 
-            <div class="productBox2">
-                <p class="productName">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
-                <div class="productPriceBox">
-                    <p class="productOptions">See other Marantz products</p>
-                    <p class="productPriceBefore">£500.00</p>
-                    <p class="productPriceCurrent">£250.00</p>
-                </div>
-                <p class="productText">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nullam at cursus leo, ut efficitur risus. Sed mollis feugiat
-                    tellus, at fringilla nibh. Pellentesque quis porta elit.
-                    Vestibulum ut gravida mi.
-                </p>
-                <div class="productFaqBox">
-                    <a href="">ASK A QUESTION</a>
-                    <a href="">PART EXCHANGE</a>
-                    <a href="">PAY BY FINANCE</a>
-                    <a href="">SEEN A BETTER PRICE?</a>
-                </div>
+  const data = await getDataFromApi(`products/${window.location.search}`);
+  const manufacturer = await getDataFromApi(`manufacturer/?q=${data[0].manufacturerId}`)
 
-                <div class="checkoutBox">
-                    <div class="formColorBox">
-                        <p class="formColorBoxText1">Finish <span>*</span></p>
-                        <p class="formColorBoxText2">* Required Fields</p>
-                        <form action="">
-                            <label class="colorLabelBox" for="">
-                                <input
-                                    name="color_options"
-                                    type="radio"
-                                    id="black"
-                                    value="BLACK"
-                                />
-                                <label for="black">Black</label>
-                                <br />
-                            </label>
-                            <br />
-                            <label class="colorLabelBox" for="">
-                                <input
-                                    name="color_options"
-                                    type="radio"
-                                    id="silver"
-                                    value="SILVER"
-                                />
-                                <label for="silver">Silver</label>
-                            </label>
-                        </form>
-                    </div>
+  productBigImg.src = data[0].pictures[0];
+  if (data[0].pictures.length > 1) {
+    data[0].pictures.forEach((src) => {
+      const newImg = document.createElement('img');
+      newImg.src = src;
+      smallImgBox.appendChild(newImg);
+    });
+  } else {
+    const newImg = document.createElement('img');
+    newImg.src = data[0].pictures[0];
+    smallImgBox.appendChild(newImg);
+  }
+  title.textContent = data[0].title;
+  productOptions.textContent = 'See other ' + manufacturer[0].name + ' products'
+  priceBefore.textContent = data[0].price;
+  priceAfter.textContent = data[0].price - data[0].discount;
+  productDesc.textContent = data[0].description;
+  manufacturerName.textContent = manufacturer[0].name
+  manufacturerLink.textContent = data[0].specs.manufacturerLink
+</script>
 
-                    <div class="formCheckOutBox">
-                        <form action="">
-                            <label class="productCount" for="quantity"
-                                >Qty:</label
-                            >
-                            <input
-                                value="1"
-                                type="number"
-                                id="quantity"
-                                name="quantity"
-                                min="1"
-                                max="99"
-                            />
-                            <input
-                                class="addToCart"
-                                value="ADD TO CART"
-                                type="submit"
-                            />
-                        </form>
-                        <br />
-                        <p class="or">-OR-</p>
-                        <a class="paypalCheckout" href="">
-                            <Image
-                                class="paypalIcon"
-                                src={paypal}
-                                alt=""
-                                format="webp"
-                            />
-                            <p class="checkOut">Check Out</p>
-                        </a>
-                        <p class="paypalUnderText">
-                            The safer, easier way to pay
-                        </p>
-                        <span class="line"></span>
-                    </div>
-
-                    <div class="infoBox">
-                        <p class="infoTitle">ADDITIONAL INFORMATION</p>
-                        <div class="infoItemsBox">
-                            <p class="infoName">MANUFACTURER</p>
-                            <p class="infoValue">Marantz</p>
-
-                            <p class="infoName">MANUFACTURER LINK</p>
-                            <span class="infoValueSpan">Marantz PM6006</span>
-
-                            <p class="infoName">FREE WARRANTY</p>
-                            <p class="infoValue">3 years</p>
-
-                            <p class="infoName">DELIVERY CHARGE</p>
-                            <p class="infoValue">Free</p>
-
-                            <p class="infoName">DELIVERY TIME</p>
-                            <p class="infoValue">1 - 5 Working Days</p>
-
-                            <p class="infoName">CARD SURCHARGES</p>
-                            <p class="infoValue">No</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="descriptionSection">
-            <p class="descriptionTitle">DESCRIPTION</p>
-            <div class="descriptionBox">
-                <div class="descriptionBox1">
-                    <p>Power Output (8/ 4 Ohm RMS)</p>
-                    <br />
-                    <p>Frequency Respone</p>
-                    <br />
-                    <div>
-                        <p>Total Harmonic Distortion</p>
-                        <p>Damping Factor</p>
-                        <p>Input Sensitivity: MM</p>
-                        <p>Input Sensitivity: MC</p>
-                    </div>
-                    <br />
-                    <p>Signal to Noise Ratio: MM / MC</p>
-                    <br />
-                    <div>
-                        <p>Input Sensitivity: High level</p>
-                        <p>Input Sensitivity: Balanced High level</p>
-                        <p>Signal to Noise Ratio: High level</p>
-                        <p>Input Sensitivity: Power Amp Direct IN</p>
-                    </div>
-                    <br />
-                    <p>Signal to Noise Ratio: Power Amp Direct IN</p>
-                </div>
-
-                <div class="descriptionBox2">
-                    <p>45 W / 60 W</p>
-                    <p>10 Hz</p>
-                    <p><i class="fa-solid fa-x"></i></p>
-                    <p>70 kHz</p>
-                    <p>0.08%</p>
-                    <p>100</p>
-                    <p>2.2mV / 47 kOhm</p>
-                    <p><i class="fa-solid fa-x"></i></p>
-                    <p>83 dB /</p>
-                    <p><i class="fa-solid fa-x"></i></p>
-                    <p>200mV / 20 kOhm</p>
-                    <p><i class="fa-solid fa-x"></i></p>
-                    <p>102dB(2V input)</p>
-                    <p><i class="fa-solid fa-x"></i></p>
-                    <p><i class="fa-solid fa-x"></i></p>
-                </div>
-            </div>
-            <div class="customerSupport">
-                <a href=""
-                    ><i class="fa-solid fa-phone"></i> CALL US ABOUT THIS
-                    PRODUCT</a
-                >
-            </div>
-        </section>
+<StartLayout title="Product - HIFI-corner">
+  <div id="wrapper">
+    <Breadcrumbs />
+    <div class="bannerBox">
+      <Image class="" src={banner} alt="" format="webp" />
     </div>
 
-    <style>
-        /* Chrome, Safari, Edge, Opera */
-        input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
+    <section class="productSection">
+      <div class="productBox1">
+        <img class="productImgBig" src="" alt="Product image" />
+        <span>MORE VIEWS</span>
+        <div class="moreImgsBox"></div>
+      </div>
 
-        /* Firefox */
-        input[type="number"] {
-            -moz-appearance: textfield;
-        }
-        p,
-        a,
-        span {
-            font-family: "Museo sans rounded webfont";
-            color: #b19b61;
-        }
+      <div class="productBox2">
+        <p class="productName"></p>
+        <div class="productPriceBox">
+          <a class="productOptions"></a>
+          <p class="productPriceBefore"></p>
+          <p class="productPriceCurrent"></p>
+        </div>
+        <p class="productText"></p>
+        <div class="productFaqBox">
+          <a href="">ASK A QUESTION</a>
+          <a href="">PART EXCHANGE</a>
+          <a href="">PAY BY FINANCE</a>
+          <a href="">SEEN A BETTER PRICE?</a>
+        </div>
 
-        #wrapper {
-            max-width: 1100px;
-            margin: auto;
-            background-color: white;
-            padding: 0em 4em;
-        }
+        <div class="checkoutBox">
+          <div class="formColorBox">
+            <p class="formColorBoxText1">Finish <span>*</span></p>
+            <p class="formColorBoxText2">* Required Fields</p>
+            <form action="">
+              <label class="colorLabelBox" for="">
+                <input name="color_options" type="radio" id="black" value="BLACK" />
+                <label for="black">Black</label>
+                <br />
+              </label>
+              <br />
+              <label class="colorLabelBox" for="">
+                <input name="color_options" type="radio" id="silver" value="SILVER" />
+                <label for="silver">Silver</label>
+              </label>
+            </form>
+          </div>
 
-        .moreImgsBox {
-            display: grid;
-            padding-top: 1em;
-            grid-template-columns: repeat(2, 50px);
-            column-gap: 2em;
-        }
+          <div class="formCheckOutBox">
+            <form action="">
+              <label class="productCount" for="quantity">Qty:</label>
+              <input value="1" type="number" id="quantity" name="quantity" min="1" max="99" />
+              <input class="addToCart" value="ADD TO CART" type="submit" />
+            </form>
+            <br />
+            <p class="or">-OR-</p>
+            <a class="paypalCheckout" href="">
+              <Image class="paypalIcon" src={paypal} alt="" format="webp" />
+              <p class="checkOut">Check Out</p>
+            </a>
+            <p class="paypalUnderText">The safer, easier way to pay</p>
+            <span class="line"></span>
+          </div>
 
-        body {
-            background-color: black;
-        }
+          <div class="infoBox">
+            <p class="infoTitle">ADDITIONAL INFORMATION</p>
+            <div class="infoItemsBox">
+              <p class="infoName">MANUFACTURER</p>
+              <p class="infoValue manufacturer__name"></p>
 
-        .bannerBox img {
-            margin: auto;
-            display: block;
-        }
+              <p class="infoName">MANUFACTURER LINK</p>
+              <span class="infoValueSpan manufacturer__link"></span>
 
-        .bannerBox {
-            padding-bottom: 1.5em;
-        }
+              <p class="infoName">FREE WARRANTY</p>
+              <p class="infoValue">3 years</p>
 
-        .bannerBox img {
-            max-width: 972px;
-        }
+              <p class="infoName">DELIVERY CHARGE</p>
+              <p class="infoValue">Free</p>
 
-        .productSection {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-        }
+              <p class="infoName">DELIVERY TIME</p>
+              <p class="infoValue">1 - 5 Working Days</p>
 
-        .productBox1 {
-            height: 800px;
-            max-width: 400px;
-        }
+              <p class="infoName">CARD SURCHARGES</p>
+              <p class="infoValue">No</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        .productBox1 span {
-            font-weight: 800;
-        }
+    <section class="descriptionSection">
+      <p class="descriptionTitle">DESCRIPTION</p>
+      <div class="descriptionBox">
+        <div class="descriptionBox1">
+          <p>Power Output (8/ 4 Ohm RMS)</p>
+          <br />
+          <p>Frequency Respone</p>
+          <br />
+          <div>
+            <p>Total Harmonic Distortion</p>
+            <p>Damping Factor</p>
+            <p>Input Sensitivity: MM</p>
+            <p>Input Sensitivity: MC</p>
+          </div>
+          <br />
+          <p>Signal to Noise Ratio: MM / MC</p>
+          <br />
+          <div>
+            <p>Input Sensitivity: High level</p>
+            <p>Input Sensitivity: Balanced High level</p>
+            <p>Signal to Noise Ratio: High level</p>
+            <p>Input Sensitivity: Power Amp Direct IN</p>
+          </div>
+          <br />
+          <p>Signal to Noise Ratio: Power Amp Direct IN</p>
+        </div>
 
-        .productImgBig {
-            border: 1px gray solid;
-        }
+        <div class="descriptionBox2">
+          <p>45 W / 60 W</p>
+          <p>10 Hz</p>
+          <p><i class="fa-solid fa-x"></i></p>
+          <p>70 kHz</p>
+          <p>0.08%</p>
+          <p>100</p>
+          <p>2.2mV / 47 kOhm</p>
+          <p><i class="fa-solid fa-x"></i></p>
+          <p>83 dB /</p>
+          <p><i class="fa-solid fa-x"></i></p>
+          <p>200mV / 20 kOhm</p>
+          <p><i class="fa-solid fa-x"></i></p>
+          <p>102dB(2V input)</p>
+          <p><i class="fa-solid fa-x"></i></p>
+          <p><i class="fa-solid fa-x"></i></p>
+        </div>
+      </div>
+      <div class="customerSupport">
+        <a href=""><i class="fa-solid fa-phone"></i> CALL US ABOUT THIS PRODUCT</a>
+      </div>
+    </section>
+  </div>
 
-        .productName {
-            font-size: 18px;
-            font-weight: 700;
-        }
+  <style>
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
 
-        .productPriceBox {
-            display: grid;
-            grid-template-columns: 4fr 50px 130px;
-            padding-top: 1em;
-            align-items: center;
-        }
+    /* Firefox */
+    input[type='number'] {
+      -moz-appearance: textfield;
+    }
+    p,
+    a,
+    span {
+      font-family: 'Museo sans rounded webfont';
+      color: #b19b61;
+    }
 
-        .productPriceBefore {
-            text-decoration: line-through;
-            text-align: end;
-            color: rgb(169, 169, 169);
-        }
+    #wrapper {
+      margin: 0 10em;
+      background-color: white;
+      padding: 0em 4em;
+    }
 
-        .productPriceCurrent {
-            text-align: end;
-            font-size: 25px;
-        }
+    .moreImgsBox {
+      display: grid;
+      padding-top: 1em;
+      grid-template-columns: repeat(auto-fit, 100px);
+      gap: 2em;
+    }
 
-        .productOptions {
-            font-weight: 700;
-        }
+    body {
+      background-color: black;
+    }
 
-        .productText {
-            padding-top: 3em;
-            color: black;
-        }
+    .bannerBox img {
+      margin: auto;
+      display: block;
+    }
 
-        .productFaqBox {
-            display: grid;
-            grid-template-columns: repeat(4, auto);
-            padding-top: 3em;
-        }
+    .bannerBox {
+      padding-bottom: 1.5em;
+    }
 
-        .productFaqBox a {
-            background-color: #b19b61;
-            color: white;
-            max-width: 110px;
-            font-size: 9px;
-            text-decoration: none;
-            text-align: center;
-            padding: 1em 0;
-        }
+    .bannerBox img {
+      max-width: 972px;
+    }
 
-        .productFaqBox a:hover {
-            color: black;
-        }
+    .productSection {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
 
-        .checkoutBox {
-            margin-top: 2em;
-        }
+    .productBox1 {
+      height: 800px;
+      max-width: 1000px;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+    }
 
-        .formColorBox {
-            height: 120px;
-            border: solid 1px grey;
-            border-bottom: 1px grey solid;
-            padding: 0.5em 1em 0em 1em;
-            display: grid;
-            grid-template-rows: repeat(2, auto);
-            grid-template-columns: repeat(2, auto);
-        }
+    .productBox1 span {
+      font-weight: 800;
+    }
 
-        .colorLabelBox {
-            background-color: rgb(200, 200, 200);
-            padding: 0.25em 8em 0.25em 1em;
-        }
+    .productImgBig {
+      border: 1px gray solid;
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
 
-        .colorLabelBox label {
-            padding-left: 1em;
-        }
+    .productName {
+      font-size: 18px;
+      font-weight: 700;
+    }
 
-        .formColorBoxText2 {
-            text-align: end;
-            color: red;
-        }
+    .productPriceBox {
+      display: grid;
+      grid-template-columns: 4fr 50px 130px;
+      padding-top: 1em;
+      align-items: center;
+    }
 
-        .formCheckOutBox {
-            width: 100%;
-            height: 250px;
-            background-color: rgb(200, 200, 200);
-            border: solid 1px grey;
-            padding: 1em 1em 0em 1em;
-            border-top: 0px;
-        }
+    .productPriceBefore {
+      text-decoration: line-through;
+      text-align: end;
+      color: rgb(169, 169, 169);
+    }
 
-        .or {
-            margin-left: 9em;
-        }
+    .productPriceCurrent {
+      text-align: end;
+      font-size: 25px;
+    }
 
-        .productCount {
-            color: #b19b61;
-            font-weight: 700;
-            padding-right: 0.5em;
-        }
+    .productPriceCurrent::before,
+    .productPriceBefore::before {
+      content: '£';
+    }
 
-        #quantity {
-            padding: 1em 0;
-            text-align: center;
-            max-width: 46px;
-        }
+    .productOptions {
+      font-weight: 700;
+    }
 
-        .addToCart {
-            background-color: #b19b61;
-            outline: none;
-            border: none;
-            color: white;
-            padding: 1em 2em;
-            margin-left: 0.5em;
-            cursor: pointer;
-            font-weight: 700;
-        }
+    .productText {
+      padding-top: 3em;
+      color: black;
+    }
 
-        .addToCart:hover {
-            color: black;
-        }
+    .productFaqBox {
+      display: grid;
+      grid-template-columns: repeat(4, auto);
+      padding-top: 3em;
+    }
 
-        .paypalIcon {
-            max-width: 50px;
-            max-height: 50px;
-        }
+    .productFaqBox a {
+      background-color: #b19b61;
+      color: white;
+      max-width: 110px;
+      font-size: 9px;
+      text-decoration: none;
+      text-align: center;
+      padding: 1em 0;
+    }
 
-        .paypalCheckout {
-            display: grid;
-            grid-template-columns: 50px 70px;
-            background-color: orange;
-            width: 130px;
-            border-radius: 5em;
-            margin-left: 6em;
-            margin-top: 1em;
-            cursor: pointer;
-            justify-content: center;
-            text-decoration: none;
-        }
+    .productFaqBox a:hover {
+      color: black;
+    }
 
-        .paypalUnderText {
-            color: black;
-            font-size: 8px;
-            padding-top: 5px;
-            margin-left: 14em;
-        }
+    .checkoutBox {
+      margin-top: 2em;
+    }
 
-        .line {
-            width: 95%;
-            padding-top: 2em;
-            display: block;
-            border-bottom: 1px solid grey;
-        }
+    .formColorBox {
+      height: 120px;
+      border: solid 1px grey;
+      border-bottom: 1px grey solid;
+      padding: 0.5em 1em 0em 1em;
+      display: grid;
+      grid-template-rows: repeat(2, auto);
+      grid-template-columns: repeat(2, auto);
+    }
 
-        .checkOut {
-            font-size: 12px;
-            color: black;
-            width: 70px;
-            text-align: center;
-            align-self: center;
-        }
+    .colorLabelBox {
+      background-color: rgb(200, 200, 200);
+      padding: 0.25em 8em 0.25em 1em;
+    }
 
-        .infoItemsBox {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            grid-template-rows: repeat(7, auto);
-        }
+    .colorLabelBox label {
+      padding-left: 1em;
+    }
 
-        .infoName {
-            grid-column: 1;
-            color: black;
-            font-size: 10px;
-            background-color: rgb(221, 221, 221);
-            border: 1px solid grey;
-            text-align: start;
-            padding: 1em 2em;
-            font-weight: 700;
-        }
+    .formColorBoxText2 {
+      text-align: end;
+      color: red;
+    }
 
-        .infoValue {
-            grid-column: 2;
-            color: black;
-            font-size: 11px;
-            border: 1px solid grey;
-            padding: 1em 2em;
-        }
+    .formCheckOutBox {
+      width: 100%;
+      height: 250px;
+      background-color: rgb(200, 200, 200);
+      border: solid 1px grey;
+      padding: 1em 1em 0em 1em;
+      border-top: 0px;
+    }
 
-        .infoBox {
-            padding-top: 2em;
-        }
+    .or {
+      margin-left: 9em;
+    }
 
-        .infoTitle {
-            padding-bottom: 10px;
-            font-weight: 700;
-        }
+    .productCount {
+      color: #b19b61;
+      font-weight: 700;
+      padding-right: 0.5em;
+    }
 
-        .infoValueSpan {
-            color: #b19b61;
-            grid-column: 2;
-            font-size: 11px;
-            border: 1px solid grey;
-            padding: 1em 2em;
-        }
+    #quantity {
+      padding: 1em 0;
+      text-align: center;
+      max-width: 46px;
+    }
 
-        .descriptionSection {
-            padding: 1em 0 2em 0;
-        }
+    .addToCart {
+      background-color: #b19b61;
+      outline: none;
+      border: none;
+      color: white;
+      padding: 1em 2em;
+      margin-left: 0.5em;
+      cursor: pointer;
+      font-weight: 700;
+    }
 
-        .customerSupport {
-            background-color: black;
-            display: grid;
-            justify-content: center;
-            padding: 5px;
-        }
+    .addToCart:hover {
+      color: black;
+    }
 
-        .customerSupport a {
-            text-decoration: none;
-        }
+    .paypalIcon {
+      max-width: 50px;
+      max-height: 50px;
+    }
 
-        .customerSupport a:hover {
-            color:white;
-        }
+    .paypalCheckout {
+      display: grid;
+      grid-template-columns: 50px 70px;
+      background-color: orange;
+      width: 130px;
+      border-radius: 5em;
+      margin-left: 6em;
+      margin-top: 1em;
+      cursor: pointer;
+      justify-content: center;
+      text-decoration: none;
+    }
 
-        .descriptionBox p {
-            color: black;
-            font-size: 12px;
-        }
+    .paypalUnderText {
+      color: black;
+      font-size: 8px;
+      padding-top: 5px;
+      margin-left: 14em;
+    }
 
-        .descriptionBox {
-            max-width: 600px;
-            line-height: 1.6;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            padding-bottom:1em;
-        }
+    .line {
+      width: 95%;
+      padding-top: 2em;
+      display: block;
+      border-bottom: 1px solid grey;
+    }
 
-        .descriptionTitle {
-            font-weight: 700;
-            padding-bottom: 1em;
-        }
+    .checkOut {
+      font-size: 12px;
+      color: black;
+      width: 70px;
+      text-align: center;
+      align-self: center;
+    }
 
-        .descriptionBox2  {
-            line-height: 2;
-        }
+    .infoItemsBox {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      grid-template-rows: repeat(7, auto);
+    }
 
-        .formColorBoxText1 span {
-            color: red;
-        }
-    </style>
+    .infoName {
+      grid-column: 1;
+      color: black;
+      font-size: 10px;
+      background-color: rgb(221, 221, 221);
+      border: 1px solid grey;
+      text-align: start;
+      padding: 1em 2em;
+      font-weight: 700;
+    }
+
+    .infoValue {
+      grid-column: 2;
+      color: black;
+      font-size: 11px;
+      border: 1px solid grey;
+      padding: 1em 2em;
+    }
+
+    .infoBox {
+      padding-top: 2em;
+    }
+
+    .infoTitle {
+      padding-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .infoValueSpan {
+      color: #b19b61;
+      grid-column: 2;
+      font-size: 11px;
+      border: 1px solid grey;
+      padding: 1em 2em;
+    }
+
+    .descriptionSection {
+      padding: 1em 0 2em 0;
+    }
+
+    .customerSupport {
+      background-color: black;
+      display: grid;
+      justify-content: center;
+      padding: 5px;
+    }
+
+    .customerSupport a {
+      text-decoration: none;
+    }
+
+    .customerSupport a:hover {
+      color: white;
+    }
+
+    .descriptionBox p {
+      color: black;
+      font-size: 12px;
+    }
+
+    .descriptionBox {
+      max-width: 600px;
+      line-height: 1.6;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-bottom: 1em;
+    }
+
+    .descriptionTitle {
+      font-weight: 700;
+      padding-bottom: 1em;
+    }
+
+    .descriptionBox2 {
+      line-height: 2;
+    }
+
+    .formColorBoxText1 span {
+      color: red;
+    }
+  </style>
 </StartLayout>

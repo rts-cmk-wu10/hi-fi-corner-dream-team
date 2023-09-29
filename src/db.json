@@ -49,7 +49,7 @@
       "manufacturerId": 1,
       "category": "cd-player",
       "specs": {
-        "manufacturer-link": "https://google.com",
+        "manufacturerLink": "https://google.com",
         "warranty-years": "4",
         "delivery-fee": "Free",
         "delivery-time": "1 - 5 working days",
@@ -67,7 +67,7 @@
       "manufacturerId": 1,
       "category": "cd-player",
       "specs": {
-        "manufacturer-link": "https://google.com",
+        "manufacturerLink": "https://google.com",
         "warranty-years": "4",
         "delivery-fee": "Free",
         "delivery-time": "1 - 5 working days",
@@ -85,7 +85,7 @@
       "manufacturerId": 1,
       "category": "cd-player",
       "specs": {
-        "manufacturer-link": "https://google.com",
+        "manufacturerLink": "https://google.com",
         "warranty-years": "4",
         "delivery-fee": "Free",
         "delivery-time": "1 - 5 working days",
@@ -103,7 +103,7 @@
       "manufacturerId": 2,
       "category": "cd-player",
       "specs": {
-        "manufacturer-link": "https://google.com",
+        "manufacturerLink": "https://google.com",
         "warranty-years": "4",
         "delivery-fee": "Free",
         "delivery-time": "1 - 5 working days",
@@ -121,7 +121,7 @@
       "manufacturerId": 1,
       "category": "cd-player",
       "specs": {
-        "manufacturer-link": "https://google.com",
+        "manufacturerLink": "https://google.com",
         "warranty-years": "4",
         "delivery-fee": "Free",
         "delivery-time": "1 - 5 working days",
@@ -139,7 +139,7 @@
       "manufacturerId": 2,
       "category": "cd-player",
       "specs": {
-        "manufacturer-link": "https://google.com",
+        "manufacturerLink": "https://google.com",
         "warranty-years": "4",
         "delivery-fee": "Free",
         "delivery-time": "1 - 5 working days",
@@ -157,7 +157,7 @@
       "manufacturerId": 3,
       "category": "cd-player",
       "specs": {
-        "manufacturer-link": "https://google.com",
+        "manufacturerLink": "https://google.com",
         "warranty-years": "4",
         "delivery-fee": "Free",
         "delivery-time": "1 - 5 working days",
@@ -175,7 +175,7 @@
       "manufacturerId": 3,
       "category": "cd-player",
       "specs": {
-        "manufacturer-link": "https://google.com",
+        "manufacturerLink": "https://google.com",
         "warranty-years": "4",
         "delivery-fee": "Free",
         "delivery-time": "1 - 5 working days",
@@ -193,7 +193,7 @@
       "manufacturerId": 4,
       "category": "amplifier",
       "specs": {
-        "manufacturer-link": "https://google.com",
+        "manufacturerLink": "https://google.com",
         "warranty-years": "4",
         "delivery-fee": "Free",
         "delivery-time": "1 - 5 working days",
@@ -211,7 +211,7 @@
       "manufacturerId": 4,
       "category": "amplifier",
       "specs": {
-        "manufacturer-link": "https://google.com",
+        "manufacturerLink": "https://google.com",
         "warranty-years": "4",
         "delivery-fee": "Free",
         "delivery-time": "1 - 5 working days",
@@ -229,7 +229,7 @@
       "manufacturerId": 4,
       "category": "amplifier",
       "specs": {
-        "manufacturer-link": "https://google.com",
+        "manufacturerLink": "https://google.com",
         "warranty-years": "4",
         "delivery-fee": "Free",
         "delivery-time": "1 - 5 working days",
@@ -247,7 +247,7 @@
       "manufacturerId": 3,
       "category": "amplifier",
       "specs": {
-        "manufacturer-link": "https://google.com",
+        "manufacturerLink": "https://google.com",
         "warranty-years": "4",
         "delivery-fee": "Free",
         "delivery-time": "1 - 5 working days",
@@ -265,7 +265,7 @@
       "manufacturerId": 1,
       "category": "amplifier",
       "specs": {
-        "manufacturer-link": "https://google.com",
+        "manufacturerLink": "https://google.com",
         "warranty-years": "4",
         "delivery-fee": "Free",
         "delivery-time": "1 - 5 working days",
@@ -283,7 +283,7 @@
       "manufacturerId": 3,
       "category": "amplifier",
       "specs": {
-        "manufacturer-link": "https://google.com",
+        "manufacturerLink": "https://google.com",
         "warranty-years": "4",
         "delivery-fee": "Free",
         "delivery-time": "1 - 5 working days",
@@ -301,7 +301,7 @@
       "manufacturerId": 3,
       "category": "amplifier",
       "specs": {
-        "manufacturer-link": "https://google.com",
+        "manufacturerLink": "https://google.com",
         "warranty-years": "4",
         "delivery-fee": "Free",
         "delivery-time": "1 - 5 working days",
@@ -319,7 +319,7 @@
       "manufacturerId": 5,
       "category": "amplifier",
       "specs": {
-        "manufacturer-link": "https://google.com",
+        "manufacturerLink": "https://google.com",
         "warranty-years": "4",
         "delivery-fee": "Free",
         "delivery-time": "1 - 5 working days",
@@ -337,7 +337,7 @@
       "manufacturerId": 6,
       "category": "speaker",
       "specs": {
-        "manufacturer-link": "https://google.com",
+        "manufacturerLink": "https://google.com",
         "warranty-years": "4",
         "delivery-fee": "Free",
         "delivery-time": "1 - 5 working days",
@@ -355,7 +355,7 @@
       "manufacturerId": 7,
       "category": "speaker",
       "specs": {
-        "manufacturer-link": "https://google.com",
+        "manufacturerLink": "https://google.com",
         "warranty-years": "4",
         "delivery-fee": "Free",
         "delivery-time": "1 - 5 working days",
@@ -373,7 +373,7 @@
       "manufacturerId": 8,
       "category": "speaker",
       "specs": {
-        "manufacturer-link": "https://google.com",
+        "manufacturerLink": "https://google.com",
         "warranty-years": "4",
         "delivery-fee": "Free",
         "delivery-time": "1 - 5 working days",
@@ -391,7 +391,7 @@
       "manufacturerId": 8,
       "category": "speaker",
       "specs": {
-        "manufacturer-link": "https://google.com",
+        "manufacturerLink": "https://google.com",
         "warranty-years": "4",
         "delivery-fee": "Free",
         "delivery-time": "1 - 5 working days",
@@ -409,7 +409,7 @@
       "manufacturerId": 8,
       "category": "speaker",
       "specs": {
-        "manufacturer-link": "https://google.com",
+        "manufacturerLink": "https://google.com",
         "warranty-years": "4",
         "delivery-fee": "Free",
         "delivery-time": "1 - 5 working days",
@@ -427,7 +427,7 @@
       "manufacturerId": 1,
       "category": "amplifier",
       "specs": {
-        "manufacturer-link": "https://google.com",
+        "manufacturerLink": "https://google.com",
         "warranty-years": "4",
         "delivery-fee": "Free",
         "delivery-time": "1 - 5 working days",
@@ -445,7 +445,7 @@
       "manufacturerId": 1,
       "category": "amplifier",
       "specs": {
-        "manufacturer-link": "https://google.com",
+        "manufacturerLink": "https://google.com",
         "warranty-years": "4",
         "delivery-fee": "Free",
         "delivery-time": "1 - 5 working days",
@@ -463,7 +463,7 @@
       "manufacturerId": 1,
       "category": "amplifier",
       "specs": {
-        "manufacturer-link": "https://google.com",
+        "manufacturerLink": "https://google.com",
         "warranty-years": "4",
         "delivery-fee": "Free",
         "delivery-time": "1 - 5 working days",
@@ -481,7 +481,7 @@
       "manufacturerId": 4,
       "category": "amplifier",
       "specs": {
-        "manufacturer-link": "https://google.com",
+        "manufacturerLink": "https://google.com",
         "warranty-years": "4",
         "delivery-fee": "Free",
         "delivery-time": "1 - 5 working days",
@@ -499,7 +499,7 @@
       "manufacturerId": 4,
       "category": "amplifier",
       "specs": {
-        "manufacturer-link": "https://google.com",
+        "manufacturerLink": "https://google.com",
         "warranty-years": "4",
         "delivery-fee": "Free",
         "delivery-time": "1 - 5 working days",
@@ -508,16 +508,16 @@
     },
     {
       "id": 27,
-      "title": "Project debut 3 black",
+      "title": "Project debut 3",
       "price": 2299,
       "discount": 229,
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores excepturi totam error, deserunt maxime libero quisquam eius sit similique neque et exercitationem voluptates nisi doloremque necessitatibus inventore natus minima quam.",
       "finish": ["black", "red", "yellow"],
-      "pictures": ["src/assets/pladespillere/Pro_ject_Debut_3_bl.jpg","src/assets/pladespillere/Pro_ject_Debut_III_red_1.jpg", "src/assets/pladespillere/Pro_ject_Debut_III_yellow_1.jpg"],
+      "pictures": ["src/assets/pladespillere/Pro_ject_Debut_3_bl.jpg", "src/assets/pladespillere/Pro_ject_Debut_III_red_1.jpg", "src/assets/pladespillere/Pro_ject_Debut_III_yellow_1.jpg"],
       "manufacturerId": 5,
       "category": "turntable",
       "specs": {
-        "manufacturer-link": "https://google.com",
+        "manufacturerLink": "https://google.com",
         "warranty-years": "4",
         "delivery-fee": "Free",
         "delivery-time": "1 - 5 working days",
@@ -535,7 +535,7 @@
       "manufacturerId": 5,
       "category": "turntable",
       "specs": {
-        "manufacturer-link": "https://google.com",
+        "manufacturerLink": "https://google.com",
         "warranty-years": "4",
         "delivery-fee": "Free",
         "delivery-time": "1 - 5 working days",
@@ -553,7 +553,7 @@
       "manufacturerId": 5,
       "category": "turntable",
       "specs": {
-        "manufacturer-link": "https://google.com",
+        "manufacturerLink": "https://google.com",
         "warranty-years": "4",
         "delivery-fee": "Free",
         "delivery-time": "1 - 5 working days",
@@ -571,7 +571,7 @@
       "manufacturerId": 9,
       "category": "amplifier",
       "specs": {
-        "manufacturer-link": "https://google.com",
+        "manufacturerLink": "https://google.com",
         "warranty-years": "4",
         "delivery-fee": "Free",
         "delivery-time": "1 - 5 working days",
@@ -589,7 +589,7 @@
       "manufacturerId": 9,
       "category": "amplifier",
       "specs": {
-        "manufacturer-link": "https://google.com",
+        "manufacturerLink": "https://google.com",
         "warranty-years": "4",
         "delivery-fee": "Free",
         "delivery-time": "1 - 5 working days",
@@ -607,7 +607,7 @@
       "manufacturerId": 5,
       "category": "amplifier",
       "specs": {
-        "manufacturer-link": "https://google.com",
+        "manufacturerLink": "https://google.com",
         "warranty-years": "4",
         "delivery-fee": "Free",
         "delivery-time": "1 - 5 working days",
@@ -625,7 +625,7 @@
       "manufacturerId": 9,
       "category": "amplifier",
       "specs": {
-        "manufacturer-link": "https://google.com",
+        "manufacturerLink": "https://google.com",
         "warranty-years": "4",
         "delivery-fee": "Free",
         "delivery-time": "1 - 5 working days",
@@ -643,7 +643,7 @@
       "manufacturerId": 9,
       "category": "amplifier",
       "specs": {
-        "manufacturer-link": "https://google.com",
+        "manufacturerLink": "https://google.com",
         "warranty-years": "4",
         "delivery-fee": "Free",
         "delivery-time": "1 - 5 working days",

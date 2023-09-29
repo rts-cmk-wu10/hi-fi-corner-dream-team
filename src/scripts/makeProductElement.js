@@ -9,7 +9,7 @@ export default function makeProductElement (image, title, price, discountPrice) 
     </div>
     <h4>${title}</h4>
     <p class="price__now">${price}</p>
-    <button class="product__button">add to cart</button>
+    <a href="/shop-product?q=${title}" class="product__button">add to cart</a>
   `
   } else {
     newDiv.innerHTML = `
@@ -22,7 +22,7 @@ export default function makeProductElement (image, title, price, discountPrice) 
       <p class="price__now">${price - discountPrice}</p>
     </div>
     <p class="price__discount">${discountPrice}</p>
-    <button class="product__button">add to cart</button>
+    <a href="/shop-product?q=${title}" class="product__button">add to cart</a>
   `
   }
   return newDiv
